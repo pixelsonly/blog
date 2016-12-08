@@ -21,7 +21,7 @@ activate :contentful do |config|
     category: ENV['CONTENTFUL_MAPPER_CATEGORY_TYPE_ID'],
     author: ENV['CONTENTFUL_MAPPER_AUTHOR_TYPE_ID']
   }
-  config.cda_query = {content_type: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID'], include: 1}
+  config.cda_query = {content_type: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID'], include: 3}
 end
 
 after_configuration do
@@ -41,4 +41,10 @@ configure :build do
   activate :minify_css
   activate :asset_hash
   activate :relative_assets
+end
+
+helpers do
+  def author
+    data.blog.post.first[1][:author].first
+  end
 end
