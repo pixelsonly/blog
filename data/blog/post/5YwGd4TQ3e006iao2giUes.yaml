@@ -1,0 +1,30 @@
+---
+:id: 5YwGd4TQ3e006iao2giUes
+:title: Upgrading to an iPhone 7 Plus
+:slug: upgrading-to-an-iphone-7-plus
+:author:
+- :id: 6h5OXjiiUoyoIYKkaGmKQ
+  :name: Ryan
+  :website: https://pixelsonly.com
+  :profilePhoto:
+    :title: Ryan
+    :description: Ryan Lindsey 2016
+    :url: "//images.contentful.com/v4zq60bqlwhq/5Pbas8LuLKEmkOGyGcY6MM/06c6824cfd07693b2a4d7dafa300c5f1/IMG_0644-ryan-lindsey-1600x1600.jpg"
+:body: |-
+  I ran into a few issues when upgrading from an iPhone 6S Plus to an iPhone 7 Plus. The first quirk I experienced after restoring from my last iCloud backup was due to a missing Apple public beta provisioning profile.
+
+  I was using the iOS 10 public beta on my 6S Plus and it slipped my mind when restoring my new iPhone from a recent backup. After the install failed, I quickly setup as a new phone but skipped all of the iCloud configuration. All I needed to do was visit beta.apple.com and re-install the provisioning profile.
+
+  Now that iOS 10.x has been released and seems relatively stable I have since deleted the public beta profile. In my opinion, Apple has done a great job in my opinion to making their public betas as accessible as possible.
+
+  Once iOS was finished restoring I noticed almost immediately that something odd was happening with screen brightness. I attempted to adjust every single setting I could think of with no luck.
+
+  I was experiencing serious visibility issues both indoors and outdoors. The auto-brightness feature seemed to be a culprit but disabling all together had no impact. When holding the brightness slider in Control Center to maximum, the screen would appear as expected, but once released the screen would return to almost 50% brightness.
+
+  Apple phone support was event stumped and was quick to help me schedule a genius bar appointment. It was starting to sound like I had a lemon on my hands and was looking at a replacement in the first week.
+
+  A little more curiosity and digging around in Settings led me to an interesting discovery. Somehow the `Settings > General > Accessibility > Zoom` setting was enabled. Once I turned this off the brightness immediately increased to the levels I was expecting of this beautiful new screen. When toggling `Zoom` back on the screen immediately dimmed again but this time actually zoomed the entire user-interface.
+
+  I'm not sure if this was some odd migration issue moving a beta build from one device to another or just a plain old iOS bug.
+:created_at: !ruby/object:DateTime 2016-09-29 22:43:32.682000000 Z
+:updated_at: !ruby/object:DateTime 2016-12-07 01:47:31.370000000 Z

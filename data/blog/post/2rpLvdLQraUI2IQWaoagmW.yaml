@@ -1,0 +1,26 @@
+---
+:id: 2rpLvdLQraUI2IQWaoagmW
+:title: A Font Awesome 4.4.0 symbol library for Sketch 3+
+:slug: font-awesome-sketch-symbols
+:author:
+- :id: 6h5OXjiiUoyoIYKkaGmKQ
+  :name: Ryan
+  :website: https://pixelsonly.com
+  :profilePhoto:
+    :title: Ryan
+    :description: Ryan Lindsey 2016
+    :url: "//images.contentful.com/v4zq60bqlwhq/5Pbas8LuLKEmkOGyGcY6MM/06c6824cfd07693b2a4d7dafa300c5f1/IMG_0644-ryan-lindsey-1600x1600.jpg"
+:body: |
+  Soon after falling head over heals for [Sketch 3+](http://bohemiancoding.com/sketch/) I created a Symbol library for [Font Awesome 4.4.0](http://fortawesome.github.io/Font-Awesome/). Hope you find it as useful as I have.
+
+  [Download from GitHub](https://github.com/pixelsonly/font-awesome-sketch-symbols) or [Skech App Resources](http://www.sketchappsources.com/free-source/1386-font-awesome-sketch-symbols-freebie-resource.html)
+
+  ### Sketch Symbol Organization
+  ![Symbol Organization](https://raw.githubusercontent.com/pixelsonly/font-awesome-sketch-symbols/master/symbol-groups.png)
+
+  ### Font Awesome 4.4.0 Icons
+  ![Font Awesome 4.4.0 Symbols For Sketch 3](https://raw.githubusercontent.com/pixelsonly/font-awesome-sketch-symbols/master/Font%20Awesome%204.4.0.png)
+:date: !ruby/object:DateTime 2015-07-29 00:00:00.000000000 Z
+:comments: true
+:created_at: !ruby/object:DateTime 2016-12-07 01:47:30.971000000 Z
+:updated_at: !ruby/object:DateTime 2016-12-07 01:47:30.971000000 Z

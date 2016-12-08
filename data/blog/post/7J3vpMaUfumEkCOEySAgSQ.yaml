@@ -1,0 +1,46 @@
+---
+:id: 7J3vpMaUfumEkCOEySAgSQ
+:title: Building a Physical GoPro Trigger for Motorcycling
+:slug: gopro-physical-trigger
+:author:
+- :id: 6h5OXjiiUoyoIYKkaGmKQ
+  :name: Ryan
+  :website: https://pixelsonly.com
+  :profilePhoto:
+    :title: Ryan
+    :description: Ryan Lindsey 2016
+    :url: "//images.contentful.com/v4zq60bqlwhq/5Pbas8LuLKEmkOGyGcY6MM/06c6824cfd07693b2a4d7dafa300c5f1/IMG_0644-ryan-lindsey-1600x1600.jpg"
+:body: "Ever since I started using my GoPro Hero 3+ Black Edition on motorycle rides
+  I found the capture button somewhat limiting and unreliable. It can be a little
+  tricky to fully press the button on the camera or the WiFi remote while wearing
+  leather gloves and at high speed. \n\nOther times it can be difficult to quickly
+  determine if the GoPro is capturing or not. The WiFi remote makes things easier
+  but it's still not easy to feel the weather-resistant button through gloves. I also
+  like to try different mounting spots with suction cup which means I can't always
+  physically reach for it.\n\nI decided to experiment with the WiFi remote and see
+  if I could extend a set of jumper leads out to a physical switch. I figured I could
+  live without the accessory switch in my main controls for flashing the highbeam
+  and repurpose it for something a little more fun.\n\n<figure>\n  <a href=\"https://dl.dropboxusercontent.com/u/2524610/pixelsonly/articles/gopro-physical-trigger/step_1.jpg\"><img
+  src=\"https://dl.dropboxusercontent.com/u/2524610/pixelsonly/articles/gopro-physical-trigger/step_1.jpg\"></a>\n
+  \ <figcaption>Soldiering leads onto the circuit board of the GoPro WiFi remote</figcaption>\n</figure>\n\nModifying
+  the GoPro WiFi remote is definitely not for everyone. This took a little patience
+  and quite a few tools to pull off.\n\n<figure>\n  <a href=\"https://dl.dropboxusercontent.com/u/2524610/pixelsonly/articles/gopro-physical-trigger/step_2.jpg\"><img
+  src=\"https://dl.dropboxusercontent.com/u/2524610/pixelsonly/articles/gopro-physical-trigger/step_2.jpg\"></a>\n
+  \ <figcaption>Putting the remote body back together</figcaption>\n</figure>\n\n<figure>\n
+  \ <a href=\"https://dl.dropboxusercontent.com/u/2524610/pixelsonly/articles/gopro-physical-trigger/step_3.jpg\"><img
+  src=\"https://dl.dropboxusercontent.com/u/2524610/pixelsonly/articles/gopro-physical-trigger/step_3.jpg\"></a>\n
+  \ <figcaption>Soldiering a quick-disconnect pigtail onto the physical switch</figcaption>\n</figure>\n\n<figure>\n
+  \ <a href=\"https://dl.dropboxusercontent.com/u/2524610/pixelsonly/articles/gopro-physical-trigger/step_4.jpg\"><img
+  src=\"https://dl.dropboxusercontent.com/u/2524610/pixelsonly/articles/gopro-physical-trigger/step_4.jpg\"></a>\n
+  \ <figcaption>Finished product</figcaption>\n</figure>\n\nI've tested the finished
+  product on multiple rides and couldn't be happier. It allows me to be more efficient
+  with the GoPro's limited battery life by capturing with much better precision and
+  reliability. "
+:featuredImage:
+  :title: gopro-trigger-feature
+  :description: 
+  :url: "//images.contentful.com/v4zq60bqlwhq/3gezCtN4FiQGGkikcUeMYe/d1fee61ba8340a69687ec4e30384b5b4/gopro-trigger-feature.jpg"
+:date: !ruby/object:DateTime 2014-03-18 00:00:00.000000000 Z
+:comments: true
+:created_at: !ruby/object:DateTime 2016-12-07 01:47:31.186000000 Z
+:updated_at: !ruby/object:DateTime 2016-12-07 01:47:31.186000000 Z
