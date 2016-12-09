@@ -1,0 +1,24 @@
+{
+  "name": "pixelsonly.com",
+  "version": "2.0.0",
+  "description": "Ryan Lindsey - Developer, gadget lover & adrenaline junkie.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pixelsonly/pixelsonly.com.git"
+  },
+  "author": "Ryan Lindsey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pixelsonly/pixelsonly.com/issues"
+  },
+  "homepage": "https://pixelsonly.com",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "foundation-sites": "^6.3.0-rc2",
+    "stylelint": "^7.6.0"
+  }
+}
