@@ -21,7 +21,10 @@ activate :contentful do |config|
     category: ENV['CONTENTFUL_MAPPER_CATEGORY_TYPE_ID'],
     author: ENV['CONTENTFUL_MAPPER_AUTHOR_TYPE_ID']
   }
-  config.cda_query = {content_type: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID'], include: 3}
+  config.cda_query = {
+    content_type: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID'],
+    include: 3,
+    order: 'fields.date'}
 end
 
 after_configuration do
@@ -46,5 +49,9 @@ end
 helpers do
   def author
     data.blog.post.first[1][:author].first
+  end
+
+  def recent_posts
+    data.blog.post.first(3)
   end
 end
