@@ -4,6 +4,7 @@
   "description": "Ryan Lindsey - Developer, gadget lover & adrenaline junkie.",
   "main": "index.html",
   "scripts": {
+    "lint": "npm run stylelint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,10 +32,12 @@
     "foundation-sites": "^6.2.4",
     "node-sass": "^3.13.0",
     "path": "^0.12.7",
+    "postcss-cssnext": "^2.9.0",
     "postcss-loader": "^1.2.0",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "stylelint": "^7.6.0",
+    "stylelint-webpack-plugin": "^0.4.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.14.0",
     "webpack-dashboard": "^0.2.0"

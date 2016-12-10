@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
+var StyleLintPlugin = require('stylelint-webpack-plugin');
+var CSSNext = require('postcss-cssnext');
 
 module.exports = {
 
@@ -31,7 +33,7 @@ module.exports = {
         test: /.*\.scss$/,
         loader: ExtractTextPlugin.extract(
           'style',
-          'css!sass?sourceMap'
+          'css!postcss!sass?sourceMap'
         )
       },
     ],
@@ -43,6 +45,8 @@ module.exports = {
     includePaths: [__dirname + '/node_modules']
   },
 
+  postcss: [CSSNext],
+
   resolve: {
     root: __dirname + 'assets/javascripts',
     extensions: ['', '.js', '.json', '.jsx']
@@ -50,9 +54,11 @@ module.exports = {
 
   plugins: [
     new CleanWebpackPlugin(['.tmp']),
-
-    // CSS output
     new ExtractTextPlugin('assets/stylesheets/app.bundle.css', {allChunks: true}),
+    new StyleLintPlugin({
+      configFile: '.stylelintrc.json',
+      syntax: 'scss'
+    }),
 
     // Make React globally available
     new webpack.ProvidePlugin({
