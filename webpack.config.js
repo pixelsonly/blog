@@ -20,15 +20,12 @@ module.exports = {
 
   module: {
     loaders: [
-      // JS
       {
         test: /source\/assets\/javascripts\/.*\.js$/,
         exclude: /(node_modules|\.tmp|build)/,
         loader: 'babel-loader',
         query: {presets: ['es2015', 'react']}
       },
-
-      // SCSS
       {
         test: /.*\.scss$/,
         loader: ExtractTextPlugin.extract(
