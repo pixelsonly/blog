@@ -47,9 +47,6 @@
 $foundation-palette: (
   primary: #777,
   secondary: #BBB,
-  pink: #FF358B,
-  blue: #01B0F0,
-  green: #AEEE00,
   success: #3ADB76,
   warning: #FFAE00,
   alert: #EC5840,
@@ -60,6 +57,9 @@ $medium-gray: #CACACA;
 $dark-gray: #8A8A8A;
 $black: #0A0A0A;
 $white: #F7F7F7;
+$pink: #FF358B;
+$blue: #01B0F0;
+$green: #AEEE00;
 
 $body-background: $white;
 $body-font-color: $black;
@@ -410,9 +410,9 @@ $offcanvas-zindex: -1;
 $offcanvas-transition-length: .5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
-$offcanvas-exit-background: rgba($white, .25);
+$offcanvas-exit-background: transparentize($white, .75);
 $maincontent-class: 'off-canvas-content';
-$maincontent-shadow: 0 0 10px rgba($black, .5);
+$maincontent-shadow: 0 0 10px transparentize($black, .5);
 
 // 25. Orbit
 // ---------

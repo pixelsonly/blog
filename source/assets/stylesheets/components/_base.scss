@@ -1,0 +1,11 @@
+header {
+  background-color: transparent;
+
+  @include breakpoint(medium only) {
+    background-color: $light-gray;
+  }
+
+  @include breakpoint(medium only) {
+    background-color: $medium-gray;
+  }
+}
