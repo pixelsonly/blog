@@ -10,6 +10,7 @@ activate :directory_indexes
 config[:css_dir]     = '/assets/stylesheets'
 config[:images_dir]  = '/assets/images'
 config[:js_dir]      = '/assets/javascripts'
+config[:haml]        = { ugly: true, format: :html5 }
 
 activate :external_pipeline,
   name: :webpack,
