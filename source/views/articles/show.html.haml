@@ -1,7 +1,0 @@
-%h1
-  = post['title']
-%p
-  = post['created_at'].strftime('%B %d, %Y')
-  by
-  = post['author'][0]['name']
-%article= Kramdown::Document.new(post['body']).to_html

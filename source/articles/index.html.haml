@@ -1,0 +1,14 @@
+---
+  title: All Articles
+---
+
+%ul
+  - all_articles.each do |article|
+    %li
+      %article
+        %header
+          %p
+            = article.title
+            %br
+            %time
+              = format_date(article.date)

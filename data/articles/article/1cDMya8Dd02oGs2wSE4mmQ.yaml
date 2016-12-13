@@ -39,13 +39,13 @@
   reviewer spend significant time and effort digging in it could be more effective
   to pair up with the author and have them walk through the changes. This will provide
   and opportunity for the reviewer to ask questions and achieve a deeper understanding.\n\n**Being
-  an effective reviewer**\n\n~~Common courtesy and politeness go a long way but not
+  an effective reviewer**\n\nCommon courtesy and politeness go a long way but not
   everyone takes critique well. As developers, it's imperative that we recognize the
-  feedback is aimed at the code and nothing personal.~~\n\nAs a reviewer, feedback
-  can be given in a constructive manner by asking questions such as \"What do you
-  think about...?\", \"Did you consider...?\" or \"Could you explain...?\".\n\nWhen
-  an author does something well, recognize them for it. This is literally why we have
-  emoji. \n\n---\n\nResources\n* https://medium.com/@caedocha/code-review-etiquette-b4df4dc018e9#.g91zwyget\n*
+  feedback is aimed at the code and nothing personal.\n\nAs a reviewer, feedback can
+  be given in a constructive manner by asking questions such as \"What do you think
+  about...?\", \"Did you consider...?\" or \"Could you explain...?\".\n\nWhen an author
+  does something well, recognize them for it. This is literally why we have emoji.
+  \n\n---\n\n#### Resources\n\n* https://medium.com/@caedocha/code-review-etiquette-b4df4dc018e9#.g91zwyget\n*
   https://medium.com/@mrjoelkemp/giving-better-code-reviews-16109e0fdd36#.s48b2bwdc\n*
   https://medium.engineering/the-code-review-mindset-3280a4af0a89#.p7etsa1r9\n* https://www.youtube.com/watch?v=PJjmw9TRB7sn
   - 14:10\n\n\n\n\n\n\n\n\n"
@@ -54,5 +54,3 @@
   :title: Development
 :date: !ruby/object:DateTime 2016-10-05 00:00:00.000000000 Z
 :comments: true
-:created_at: !ruby/object:DateTime 2016-10-15 01:21:40.932000000 Z
-:updated_at: !ruby/object:DateTime 2016-12-08 05:17:19.948000000 Z

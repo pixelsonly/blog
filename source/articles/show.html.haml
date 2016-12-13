@@ -1,0 +1,9 @@
+%h1
+  = article.title
+%time
+  = format_date(article.date)
+%p
+  by
+  = author.name
+%article{id: article.id}
+  = render_markdown(article.body)

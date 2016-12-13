@@ -45,7 +45,7 @@
 // 1. Global
 // ---------
 $foundation-palette: (
-  primary: #777,
+  primary: #454545,
   secondary: #BBB,
   success: #3ADB76,
   warning: #FFAE00,
@@ -53,10 +53,10 @@ $foundation-palette: (
 );
 
 $light-gray: #E6E6E6;
-$medium-gray: #CACACA;
-$dark-gray: #8A8A8A;
+$medium-gray: #9B9B9B;
+$dark-gray: #454545;
 $black: #0A0A0A;
-$white: #F7F7F7;
+$white: #FEFEFE;
 $pink: #FF358B;
 $blue: #01B0F0;
 $green: #AEEE00;
@@ -73,7 +73,7 @@ $global-margin: 1rem;
 $global-padding: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 4;
+$global-radius: .15rem;
 $global-text-direction: ltr;
 $global-flexbox: true;
 $print-transparent-backgrounds: true;
@@ -138,15 +138,15 @@ $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
-$code-color: $black;
+$code-color: inherit;
 $code-font-family: $font-family-monospace;
 $code-font-weight: $global-weight-normal;
-$code-background: $light-gray;
-$code-border: 1px solid $medium-gray;
-$code-padding: rem-calc(2 5 1);
+$code-background: iherit;
+$code-border: 0;
+$code-padding: 0;
 $anchor-color: $body-font-color;
 $anchor-color-hover: scale-color($anchor-color, $lightness: 33%);
-$anchor-text-decoration: underline;
+$anchor-text-decoration: none;
 $anchor-text-decoration-hover: underline;
 $hr-width: $global-width;
 $hr-border: 1px solid $medium-gray;

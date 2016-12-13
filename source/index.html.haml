@@ -3,16 +3,19 @@
 ---
 
 %header
+  %img{src: "#{author.profilePhoto.url}?w=60&fm=jpg&fl=progressive", alt: author.name}
   %h1
     = author.name
   %p
     = author.biography
-  %img{src: "#{author.profilePhoto.url}?w=400&fm=jpg&fl=progressive", size: '400x400', alt: author.name}
-
-- recent_posts.each do |id, post|
-  %article
-    %a{href: "/articles/#{post.slug}", title: "Read #{post.title} by #{author.name}"}
-      %p
-        = post.title
-        %br/
-        = post.date.strftime("%B %d, %Y")
+%ul
+  - recent_articles.each do |article|
+    %li
+      %article
+        %a{href: "/articles/#{article.slug}", title: "Read #{article.title} by #{author.name}"}
+          %p
+            = article.title
+            %br
+            %time
+              = format_date(article.date)
+= link_to 'All Articles', '/articles', title: 'All Articles', class: 'button'

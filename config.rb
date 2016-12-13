@@ -5,49 +5,68 @@ require 'lib/article_mapper'
 # Middleman Configuration
 # ------------------------------------------------------------------------------
 activate :dotenv
+activate :syntax, line_numbers: true
 activate :directory_indexes
 
 config[:css_dir]     = '/assets/stylesheets'
 config[:images_dir]  = '/assets/images'
 config[:js_dir]      = '/assets/javascripts'
-config[:haml]        = { ugly: true, format: :html5 }
+
+set :haml, { ugly: true, format: :html5 }
+
+set :markdown_engine, :kramdown
+set :markdown, layout_engine: :haml,
+               tables:              true,
+               autolink:            true,
+               smartypants:         true,
+               fenced_code_blocks:  true
 
 activate :external_pipeline,
   name: :webpack,
   command: build? ?
-  "./node_modules/webpack/bin/webpack.js --bail -p" :
-  "./node_modules/webpack/bin/webpack.js --watch -d --progress --color",
-  source: ".tmp/dist",
+  './node_modules/webpack/bin/webpack.js --bail -p' :
+  './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
+  source: '.tmp/dist',
   latency: 1
+
 
 # ------------------------------------------------------------------------------
 # Contentful Configuration
 # ------------------------------------------------------------------------------
 activate :contentful do |config|
   config.space = {
-    blog: ENV['CONTENTFUL_SPACE']
+    articles: ENV['CONTENTFUL_SPACE']
   }
   config.access_token = ENV['CONTENTFUL_ACCESS_TOKEN']
   config.content_types = {
-    post: {
-      mapper: ArticleMapper, id: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID']
-    },
-    category: ENV['CONTENTFUL_MAPPER_CATEGORY_TYPE_ID'],
-    author: ENV['CONTENTFUL_MAPPER_AUTHOR_TYPE_ID']
+    article: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID']
   }
   config.cda_query = {
     content_type: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID'],
     include: 3,
-    order: 'fields.date'}
+    order: 'fields.date',
+    limit: 1000}
 end
+
+activate :contentful do |config|
+  config.space = {
+    authors: ENV['CONTENTFUL_SPACE']
+  }
+  config.access_token = ENV['CONTENTFUL_ACCESS_TOKEN']
+  config.content_types = {
+    author: ENV['CONTENTFUL_MAPPER_AUTHOR_TYPE_ID']
+  }
+end
+
 
 # ------------------------------------------------------------------------------
 # After Middleman Configuration
 # ------------------------------------------------------------------------------
 after_configuration do
-  # Generate a static page for each blog post stored in local data
-  data.blog.post.each do |id, post|
-    proxy "/articles/#{post.slug}/index.html", 'views/articles/show.html', locals: {post: post }, ignore: true
+  if data.articles.article?
+    data.articles.article.each do |id, article|
+      proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article }, ignore: true
+    end
   end
 end
 
@@ -69,7 +88,7 @@ configure :build do
   ignore 'assets/stylesheets/components'
   ignore 'assets/stylesheets/app.css.scss'
 
-  config[:host] = "https://pixelsonly.com"
+  config[:host] = 'https://pixelsonly.com'
 
   activate :asset_hash
 end
@@ -79,14 +98,42 @@ end
 # ------------------------------------------------------------------------------
 helpers do
   def author
-    data.blog.post.first[1][:author].first
+    data.authors.author.first[1]
   end
 
-  def all_posts
-    data.blog.post.all
+  def sort_by_most_recent(posts)
+    posts.sort_by { |key| key["date"] }.reverse
   end
 
-  def recent_posts
-    data.blog.post.first(3)
+  def recent_articles
+    articles = []
+    data.articles.article.first(3).each do |id, article|
+      articles.push article
+    end
+    sort_by_most_recent(articles)
+  end
+
+  def all_articles
+    articles = []
+    data.articles.article.each do |id, article|
+      articles.push article
+    end
+    sort_by_most_recent(articles)
+  end
+
+  def format_date(datetime)
+    datetime.strftime('%B %d, %Y')
+  end
+
+  def render_markdown(input)
+    Kramdown::Document.new(input).to_html
+  end
+
+  def canonical
+    if build?
+      "https://pixelsonly.com/" + current_page.url
+    else
+      current_page.url
+    end
   end
 end
