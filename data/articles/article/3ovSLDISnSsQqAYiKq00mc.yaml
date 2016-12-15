@@ -18,5 +18,9 @@
   :title: Gadgets
 - :id: 3mfLNmP6r6o6uMskGcQcc4
   :title: Photography
+:featuredImage:
+  :title: iPhone 7 Collection
+  :description: 
+  :url: "//images.contentful.com/v4zq60bqlwhq/1x9lGh4WDmY42sgQkAKK2q/12f7a9f808f6b32e5a8372a77a4e62dd/design_hero_large_2x.jpg"
 :date: !ruby/object:DateTime 2016-11-27 00:00:00.000000000 Z
 :comments: true
