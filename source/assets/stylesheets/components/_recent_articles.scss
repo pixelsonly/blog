@@ -1,0 +1,48 @@
+.recent-articles {
+  a:hover { text-decoration: none; }
+
+  hr { border-color: $light-gray; }
+
+  .featured-article-preview {
+    margin-bottom: $global-margin * 2;
+
+    figure {
+      position: relative;
+      margin: 0;
+    }
+
+    figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .article-title,
+    .publish-date {
+      font-family: $serif-font-family;
+      color: $white;
+    }
+
+    .article-title {
+      font-size: rem-calc(22);
+      font-weight: 700;
+    }
+  }
+
+  .article-preview {
+    .article-thumbnail {
+      border-radius: rem-calc(1000);
+    }
+
+    .publish-date {
+      font-family: $serif-font-family;
+      color: $medium-gray;
+    }
+
+    .article-title {
+      font-size: rem-calc(18);
+      font-weight: 600;
+      color: $dark-gray;
+    }
+  }
+}

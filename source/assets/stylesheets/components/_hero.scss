@@ -1,0 +1,23 @@
+.hero {
+  text-align: center;
+
+  .author-photo {
+    width: rem-calc(148);
+    height: auto;
+    border-radius: rem-calc(1000);
+  }
+
+  .author-name {
+    margin-bottom: 0;
+    font-size: rem-calc(30);
+    font-weight: 800;
+    color: $dark-gray;
+  }
+
+  .author-bio {
+    font-family: $serif-font-family;
+    font-size: rem-calc(18);
+    color: $medium-gray;
+    line-height: normal;
+  }
+}
