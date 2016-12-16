@@ -11,6 +11,10 @@
     :description: Ryan Lindsey 2016
     :url: "//images.contentful.com/v4zq60bqlwhq/5Pbas8LuLKEmkOGyGcY6MM/06c6824cfd07693b2a4d7dafa300c5f1/IMG_0644-ryan-lindsey-1600x1600.jpg"
   :biography: Developer, gadget lover & adrenaline junkie
+:blurb: It doesn't need to be painful, it should be embraced as part of your team's
+  culture. At Rails Conf 2015, Derek Prior from Thoughtbot gave a talk about code
+  review where he summed it up quite well, "Code reviews are not about catching bugs.
+  Modern code reviews are about socialization, learning and teaching."
 :body: "**Thoughts on code review in a fast-paced environment**\n\nIt doesn't need
   to be painful, it should be embraced as part of your team's culture. At Rails Conf
   2015, Derek Prior from Thoughtbot gave a talk about code review where he summed
