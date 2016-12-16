@@ -13,17 +13,24 @@
 
     figcaption {
       position: absolute;
-      bottom: 0;
+      bottom: rem-calc(-1);
       left: 0;
+      width: 100%;
+    }
+
+    .article-overlay {
+      padding: $global-padding / 2;
+      background-color: $white;
     }
 
     .article-title,
     .publish-date {
       font-family: $serif-font-family;
-      color: $white;
+      color: $dark-gray;
     }
 
     .article-title {
+      margin: 0;
       font-size: rem-calc(22);
       font-weight: 700;
     }

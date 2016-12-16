@@ -1,6 +1,10 @@
 .hero {
   text-align: center;
 
+  figure {
+    margin: $global-margin * 2;
+  }
+
   .author-photo {
     width: rem-calc(148);
     height: auto;

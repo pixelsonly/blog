@@ -12,10 +12,11 @@
               %figcaption
                 .row
                   .small-12.columns
-                    %time.publish-date
-                      = format_date(article.date)
-                    %h1.article-title
-                      = article.title
+                    %header.article-overlay
+                      %time.publish-date
+                        = format_date(article.date)
+                      %h1.article-title
+                        = article.title
               %img{src: "#{article.featuredImage.url}?&fm=jpg&fl=progressive", alt: article.featuredImage.description }
     - all_articles[1..3].each do |article|
       %li
@@ -32,7 +33,6 @@
               .small-12.columns
                 %hr
   .row
-    .small-6.medium-3.large-2.columns.end
-      = link_to '/articles', title: 'All Articles', class: 'hollow button small expanded' do
-        %strong
-          More Articles
+    .small-12.columns
+      = link_to '/articles', title: 'More Articles', class: 'hollow button expanded' do
+        More Articles
