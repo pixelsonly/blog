@@ -3,21 +3,25 @@
   "version": "2.0.0",
   "description": "Ryan Lindsey - Developer, gadget lover & adrenaline junkie.",
   "main": "index.html",
-  "scripts": {
+  "scripts":
+  {
     "lint": "npm run stylelint",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
+  "repository":
+  {
     "type": "git",
     "url": "git+https://github.com/pixelsonly/pixelsonly.com.git"
   },
   "author": "Ryan Lindsey",
   "license": "ISC",
-  "bugs": {
+  "bugs":
+  {
     "url": "https://github.com/pixelsonly/pixelsonly.com/issues"
   },
   "homepage": "https://pixelsonly.com",
-  "devDependencies": {
+  "devDependencies":
+  {
     "autoprefixer": "^6.5.3",
     "babel": "^6.5.2",
     "babel-core": "^6.20.0",
@@ -29,7 +33,7 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
-    "foundation-sites": "^6.2.4",
+    "foundation-sites": "^6.3.0",
     "node-sass": "^3.13.0",
     "path": "^0.12.7",
     "postcss-cssnext": "^2.9.0",
@@ -42,7 +46,8 @@
     "webpack": "^1.14.0",
     "webpack-dashboard": "^0.2.0"
   },
-  "dependencies": {
+  "dependencies":
+  {
     "normalize-scss": "^6.0.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1"
