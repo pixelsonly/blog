@@ -48,5 +48,12 @@
   ~~~
 
   The first argument will be the domain that will be making the request and the second is the URL of the resource in question.
+:category:
+- :id: 11ckGSN1WAom28eEOAOeYS
+  :title: Development
+:featuredImage:
+  :title: iPhone 7 Collection
+  :description: 
+  :url: "//images.contentful.com/v4zq60bqlwhq/1x9lGh4WDmY42sgQkAKK2q/12f7a9f808f6b32e5a8372a77a4e62dd/design_hero_large_2x.jpg"
 :date: !ruby/object:DateTime 2015-10-22 00:00:00.000000000 Z
 :comments: true

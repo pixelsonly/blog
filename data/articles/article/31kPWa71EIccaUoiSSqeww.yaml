@@ -54,5 +54,12 @@
   (they did say it's coming soon)\n* it would be nice to be able to import .gpx or
   .kml's but it's not a deal breaker\n\nI'm very excited to see where Mapkin is going.
   It's a fantastic piece of software and I wish them all the success in the world."
+:category:
+- :id: 3mfLNmP6r6o6uMskGcQcc4
+  :title: Photography
+:featuredImage:
+  :title: map-feature
+  :description: 
+  :url: "//images.contentful.com/v4zq60bqlwhq/4DvKeuDPEIoyqOkKKKgsu4/82608fb5e912042b5477cd1f66d9d5d0/map-feature.jpg"
 :date: !ruby/object:DateTime 2014-01-01 00:00:00.000000000 Z
 :comments: true
