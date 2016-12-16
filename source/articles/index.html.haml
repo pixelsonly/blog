@@ -1,14 +1,29 @@
 ---
-  title: All Articles
+  title: Articles
 ---
 = partial 'header'
-%ul
+%section.articles
+  .row
+    .small-12.columns
+      %h3.subheader
+        Articles
   - all_articles.each do |article|
-    %li
-      %article
-        %header
+    %article.article-preview-with-image
+      = link_to "/articles/#{article.slug}", title: article.title do
+        %figure
+          %figcaption
+            .row
+              .small-12.columns
+                %header.article-overlay
+                  %time.publish-date
+                    = format_date(article.date)
+                  %h1.article-title
+                    = article.title
+          = image_tag "#{article.featuredImage.url}?fm=jpg&fl=progressive", alt: article.featuredImage.description
+      .row
+        .small-12.columns
+          %p.blurb
+            = article.blurb
           %p
-            = article.title
-            %br
-            %time
-              = format_date(article.date)
+            = link_to "/articles/#{article.slug}", title: "Read More - #{article.title} by #{author.name}", class: 'tiny hollow secondary button' do
+              Read More
