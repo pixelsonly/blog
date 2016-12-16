@@ -1,0 +1,8 @@
+%header.hero
+  %figure
+    %img{src: "#{author.profilePhoto.url}?w=400&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo'}
+    %figcaption
+      %p.author-name
+        = author.name
+      %small.author-bio
+        = author.biography
