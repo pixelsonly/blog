@@ -5,5 +5,8 @@
 %p
   by
   = author.name
-%article{id: article.id}
-  = render_markdown(article.body)
+%header
+
+%article.row.small-collapse.medium-uncollpase
+  .small-12.columns
+    = render_markdown(article.body)

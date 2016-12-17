@@ -9,17 +9,16 @@
         Articles
   - all_articles.each do |article|
     %article.article-preview-with-image
-      = link_to "/articles/#{article.slug}", title: article.title do
-        %figure
-          %figcaption
-            .row
-              .small-12.columns
-                %header.article-overlay
-                  %time.publish-date
-                    = format_date(article.date)
-                  %h1.article-title
-                    = article.title
-          = image_tag "#{article.featuredImage.url}?fm=jpg&fl=progressive", alt: article.featuredImage.description
+      .row.small-collapse.medium-uncollapse
+        .small-12.columns
+          = link_to "/articles/#{article.slug}", title: article.title do
+            %figure
+              = image_tag "#{article.featuredImage.url}?&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto'
+              %figcaption
+                %time.publish-date
+                  = format_date(article.date)
+                %h1.article-title
+                  = article.title
       .row
         .small-12.columns
           %p.blurb
