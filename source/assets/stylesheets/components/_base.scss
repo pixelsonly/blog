@@ -1,10 +1,10 @@
+hr {
+  width: 100%;
+  border-color: $light-gray;
+}
+
 footer {
   margin: ($global-margin * 3) 0;
-
-  hr {
-    width: 100%;
-    border-color: $light-gray;
-  }
 
   .social-link {
     color: $medium-gray;
