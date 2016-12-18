@@ -15,11 +15,10 @@
   only.
 :body: "# h1\n\n## h2\n\n### h3\n\n#### h4\n\n##### h5\n\n###### h6\n\n---\n\n* List
   item\n* List item\n* List item\n\n1. Order item\n2. Order item\n3. Order item\n\n---\n\nSimple
-  Table\n| Header     | Header     | Header     |\n| ---------- | ---------- | ----------
-  |\n| Cell       | Cell       | Cell       |\n| Cell       | Cell       | Cell       |\n|
-  Cell       | Cell       | Cell       |\n| Cell       | Cell       | Cell       |\n\n---\n\n~~~javascript\nclass
-  ComponentName extends React.Component {\n    \nrender() {\n  return (\n    <div>Component</div>\n
-  \ );\n}\n    \n};\n    \nexport default ComponentName;\n~~~\n\n---\n\n>  Blockquote\n\n---\n\n![iPhone
+  Table\n\n| Header 1 | Header 2 |\n|-|-|\n| Cell 1 | Cell 2 |\n\n\n\n\n---\n\n~~~
+  \ javascript\nclass ComponentName extends React.Component {\n    \nrender() {\n
+  \ return (\n    <div>Component</div>\n  );\n}\n    \n};\n    \nexport default ComponentName;\n~~~\n\n~~~
+  \ ruby\ndef  example\n  \"example\"\nend\n~~~\n\n---\n\n>  Blockquote\n\n---\n\n![iPhone
   7 Collection](//images.contentful.com/v4zq60bqlwhq/1x9lGh4WDmY42sgQkAKK2q/12f7a9f808f6b32e5a8372a77a4e62dd/design_hero_large_2x.jpg)"
 :category:
 - :id: 11ckGSN1WAom28eEOAOeYS
