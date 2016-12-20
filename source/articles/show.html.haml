@@ -26,9 +26,9 @@ view_class: "article-show"
               = author.name
             %small.author-bio
               = author.biography
-            %hr
   .row
     .small-12.columns.article-body
+      %hr
       = render_markdown(article.body)
   .row
     .small-12.columns
