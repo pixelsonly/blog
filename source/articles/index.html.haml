@@ -1,12 +1,17 @@
 ---
   title: Articles
+  view_class: "articles-index"
 ---
 = partial 'header'
 %main
   .row
     .small-12.columns
-      %h3.subheader
-        Articles
+      %nav{role: 'navigation'}
+        %ul.breadcrumbs
+          %li
+            = link_to 'Recent', '/', title: 'Recent Articles'
+          %li.disabled
+            Articles
   - all_articles.each do |article|
     %article.article-preview-with-image
       .row.small-collapse.medium-uncollapse
@@ -24,5 +29,5 @@
           %p.blurb
             = article.blurb
           %p
-            = link_to "/articles/#{article.slug}", title: "Read More - #{article.title} by #{author.name}", class: 'tiny hollow secondary button' do
+            = link_to "/articles/#{article.slug}", title: "Read More - #{article.title} by #{author.name}", class: 'small hollow secondary button' do
               Read More

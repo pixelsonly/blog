@@ -1,0 +1,52 @@
+.article-show {
+  header {
+    text-align: center;
+  }
+
+  .article-title {
+    padding: $global-padding;
+    font-size: rem-calc(30);
+  }
+
+  .author-photo {
+    display: inline-block;
+    width: rem-calc(64);
+    margin-top: $global-margin / 2;
+    border-radius: rem-calc(1000);
+  }
+
+  .author-name {
+    margin-bottom: 0;
+    font-size: rem-calc(18);
+    font-weight: 800;
+    color: $dark-gray;
+  }
+
+  .author-bio {
+    font-family: $serif-font-family;
+    font-size: rem-calc(14);
+    color: $medium-gray;
+  }
+
+  .article-body {
+    color: $medium-gray;
+
+    blockquote {
+      border-left: $global-margin / 4 solid $light-gray;
+    }
+
+    p > code {
+      padding: 0 $global-padding / 2;
+      border: rem-calc(1) solid $light-gray;
+      border-radius: $global-radius;
+      background-color: $white;
+      color: $dark-gray;
+    }
+
+    pre.highlight {
+      margin-bottom: $global-margin;
+      border: rem-calc(1) solid $light-gray;
+      overflow: auto;
+    }
+  }
+}

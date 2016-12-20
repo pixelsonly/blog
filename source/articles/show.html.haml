@@ -1,12 +1,43 @@
-%h1
-  = article.title
-%time
-  = format_date(article.date)
-%p
-  by
-  = author.name
-%header
-
-%article.row.small-collapse.medium-uncollpase
-  .small-12.columns
-    = render_markdown(article.body)
+---
+view_class: "article-show"
+---
+%article
+  %header
+    %time.publish-date
+      = format_date(article.date)
+    %h1.article-title
+      = article.title
+    .row
+      .small-12.columns
+        %nav{role: 'navigation'}
+          %ul.breadcrumbs
+            %li
+              = link_to 'Recent', '/', title: 'Recent Articles'
+            %li
+              = link_to 'Articles', '/articles', title: 'All Articles'
+    .row.small-collapse.medium-uncollapse.article-preview-with-image
+      .small-12.columns
+        %figure
+          = image_tag "#{article.featuredImage.url}?&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto'
+          %figcaption
+            = link_to '/', title: 'Recent Articles' do
+              = image_tag "#{author.profilePhoto.url}?w=400&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto'
+            %p.author-name
+              = author.name
+            %small.author-bio
+              = author.biography
+            %hr
+  .row
+    .small-12.columns.article-body
+      = render_markdown(article.body)
+  .row
+    .small-12.columns
+      %hr
+  .row
+    .small-12.columns
+      %nav{role: 'navigation'}
+        %ul.breadcrumbs
+          %li
+            = link_to 'Recent', '/', title: 'Recent Articles'
+          %li
+            = link_to 'Articles', '/articles', title: 'All Articles'

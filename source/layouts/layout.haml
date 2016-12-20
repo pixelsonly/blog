@@ -10,25 +10,29 @@
     = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
     = stylesheet_link_tag 'highlight'
     = stylesheet_link_tag 'app.bundle'
-  %body{class: page_classes.dasherize}
+  %body{class: current_page.data.view_class}
     = yield
     %footer
       .row
-        .small-3.medium-1.medium-offset-4.large-2.large-offset-2.columns.text-center
-          = link_to data.site.social.github.url, title: 'GitHub', class: 'social-link' do
-            %i.fa.fa-github.fa-fw.fa-3x
-        .small-3.medium-1.large-2.columns.text-center
-          = link_to data.site.social.linkedin.url, title: 'LinkedIn', class: 'social-link' do
-            %i.fa.fa-linkedin.fa-fw.fa-3x
-        .small-3.medium-1.large-2.columns.text-center
-          = link_to data.site.social.instagram.url, title: 'Instagram', class: 'social-link' do
-            %i.fa.fa-instagram.fa-fw.fa-3x
-        .small-3.medium-1.large-2.columns.text-center
-          = link_to data.site.social.twitter.url, title: 'Twitter', class: 'social-link' do
-            %i.fa.fa-twitter.fa-fw.fa-3x
-      %p.copyright
-        &copy;
-        = DateTime.now.year
-        Ryan Lindsey. All rights reserved.
+        .small-12.medium-6.columns
+          %p.social-links.text-center.medium-text-left
+            = link_to data.site.social.github.url, title: 'GitHub', class: 'social-link' do
+              %i.fa.fa-github.fa-fw
+            = link_to data.site.social.linkedin.url, title: 'LinkedIn', class: 'social-link' do
+              %i.fa.fa-linkedin.fa-fw
+            = link_to data.site.social.instagram.url, title: 'Instagram', class: 'social-link' do
+              %i.fa.fa-instagram.fa-fw
+            = link_to data.site.social.twitter.url, title: 'Twitter', class: 'social-link' do
+              %i.fa.fa-twitter.fa-fw
+        .small-12.medium-6.columns
+          %p.copyright.text-center.medium-text-right
+            &copy;
+            = DateTime.now.year
+            Ryan Lindsey. All rights reserved.
+      .row
+        .small-12.columns.text-center.medium-text-left
+          %p
+            = link_to 'https://netlify.com', title: 'Deploys by Netlify' do
+              = image_tag 'https://www.netlify.com/img/global/badges/netlify-color-accent.svg', alt: 'Netlify Logo', class: 'netlify-badge'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'
     = javascript_include_tag 'app.bundle'

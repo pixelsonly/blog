@@ -3,13 +3,18 @@
 @import 'settings';
 @import '~foundation-sites/scss/foundation';
 
+// @include foundation-everything(true);
 @include foundation-global-styles;
 @include foundation-flex-classes;
 @include foundation-flex-grid;
 @include foundation-typography;
 @include foundation-button;
+@include foundation-breadcrumbs;
 
-@import "components/base";
+@import "base";
+@import "containers/articles_index";
+@import "containers/article_show";
 @import "components/hero";
-@import "components/articles";
 @import "components/buttons";
+@import "components/breadcrumbs";
+@import "components/footer";

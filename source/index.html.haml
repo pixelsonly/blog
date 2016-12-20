@@ -1,12 +1,15 @@
 ---
-  title: Recent Articles
+title: Recent Articles
+view_class: "index"
 ---
 = partial 'header'
 %section.recent-articles
   .row
     .small-12.columns
-      %h3.subheader
-        Recent Articles
+      %nav{role: 'navigation'}
+        %ul.breadcrumbs
+          %li.disabled
+            Recent
   - all_articles[0...1].each do |article|
     %article.article-preview-with-image
       .row.small-collapse.medium-uncollapse

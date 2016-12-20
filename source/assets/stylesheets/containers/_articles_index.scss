@@ -1,5 +1,11 @@
 .index,
 .articles-index {
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   article {
     p {
       padding: $global-padding / 4 $global-padding / 2;
@@ -24,22 +30,14 @@
 }
 
 .publish-date {
-  font-size: rem-calc(13);
+  font-family: $serif-font-family;
+  font-size: rem-calc(14);
   color: $medium-gray;
 }
 
 .blurb {
   margin-bottom: 0;
   font-size: rem-calc(14);
-}
-
-.index,
-.articles-index {
-  a {
-    &:hover {
-      text-decoration: none;
-    }
-  }
 }
 
 .article-preview-with-image {

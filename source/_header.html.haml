@@ -6,4 +6,7 @@
       %p.author-name
         = author.name
       %small.author-bio
-        = author.biography
+        - if current_page.url === '/articles/'
+          &ldquo;Art without engineering is dreaming. Engineering without art is calculating.&rdquo;&mdash;Steven K. Roberts
+        - else
+          = author.biography
