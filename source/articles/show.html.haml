@@ -18,10 +18,10 @@ view_class: "article-show"
     .row.small-collapse.medium-uncollapse.article-preview-with-image
       .small-12.columns
         %figure
-          = image_tag "#{article.featuredImage.url}?&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto'
+          = image_tag "#{article.featuredImage.url}?w=1000&h=500&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto'
           %figcaption
             = link_to '/', title: 'Recent Articles' do
-              = image_tag "#{author.profilePhoto.url}?w=400&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto'
+              = image_tag "#{author.profilePhoto.url}?w=400&r=1000&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto'
             %p.author-name
               = author.name
             %small.author-bio

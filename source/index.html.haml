@@ -33,7 +33,7 @@ view_class: "index"
           .small-12.columns
             %hr
           .small-3.columns
-            %img{src: "#{article.featuredImage.url}?&w=200&h=200&fit=thumb&fm=jpg&fl=progressive", alt: article.featuredImage.description, class: 'article-thumbnail' }
+            %img{src: "#{article.featuredImage.url}?&w=200&h=200&fit=thumb&r=1000&fm=jpg&fl=progressive", alt: article.featuredImage.description, class: 'article-thumbnail' }
           .small-9.columns
             %time.publish-date
               = format_date(article.date)

@@ -1,7 +1,7 @@
 %header.hero
   %figure
     = link_to '/', title: 'Recent Articles' do
-      = image_tag "#{author.profilePhoto.url}?w=400&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto'
+      = image_tag "#{author.profilePhoto.url}?w=400&r=1000&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto'
     %figcaption
       %p.author-name
         = author.name
