@@ -12,7 +12,7 @@ config[:css_dir]     = '/assets/stylesheets'
 config[:images_dir]  = '/assets/images'
 config[:js_dir]      = '/assets/javascripts'
 
-set :haml, { ugly: false, format: :html5 }
+set :haml, { ugly: true, format: :html5 }
 
 set :markdown_engine, :kramdown
 set :markdown, layout_engine: :haml,
