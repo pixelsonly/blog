@@ -12,7 +12,7 @@ config[:css_dir]     = '/assets/stylesheets'
 config[:images_dir]  = '/assets/images'
 config[:js_dir]      = '/assets/javascripts'
 
-set :haml, { ugly: true, format: :html5 }
+set :haml, { ugly: false, format: :html5 }
 
 set :markdown_engine, :kramdown
 set :markdown, layout_engine: :haml,
@@ -71,13 +71,23 @@ after_configuration do
 end
 
 # ------------------------------------------------------------------------------
-# Development
+# Environments
 # ------------------------------------------------------------------------------
 configure :development do
+  config[:host] = 'http://localhost:4567'
+
   activate :livereload,
     no_swf: true,
     livereload_css_target: 'assets/stylesheets/app.css.scss',
     livereload_css_pattern: Regexp.new('_.*\.scss')
+end
+
+configure :staging do
+  config[:host] = 'https://staging.pixelsonly.com'
+end
+
+configure :production do
+  config[:host] = 'https://pixelsonly.com'
 end
 
 # ------------------------------------------------------------------------------
@@ -87,8 +97,6 @@ configure :build do
   ignore 'assets/javascripts/components'
   ignore 'assets/stylesheets/components'
   ignore 'assets/stylesheets/app.css.scss'
-
-  config[:host] = 'https://pixelsonly.com'
 
   activate :asset_hash
 end
@@ -121,19 +129,15 @@ helpers do
     sort_by_most_recent(articles)
   end
 
-  def format_date(datetime)
+  def publish_date(datetime)
     datetime.strftime('%B %d, %Y')
+  end
+
+  def microdata_date(datetime)
+    datetime.strftime('%Y-%m-%d')
   end
 
   def render_markdown(input)
     Kramdown::Document.new(input).to_html
-  end
-
-  def canonical
-    if build?
-      "https://pixelsonly.com/" + current_page.url
-    else
-      current_page.url
-    end
   end
 end
