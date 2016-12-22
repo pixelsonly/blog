@@ -1,12 +1,12 @@
 %header.hero
-  %figure
+  %figure{itemscope: '', itemtype: 'http://schema.org/Person'}
     = link_to '/', title: 'Recent Articles' do
-      = image_tag "#{author.profilePhoto.url}?w=400&r=1000&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto'
+      = image_tag "#{author.profilePhoto.url}?w=400&r=1000&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto', itemprop: 'image'
     %figcaption
-      %p.author-name
+      %p.author-name{itemprop: 'name'}
         = author.name
-      %small.author-bio
+      %small.author-bio{itemprop: 'description'}
         - if current_page.url === '/articles/'
-          &ldquo;Art without engineering is dreaming. Engineering without art is calculating.&rdquo;&mdash;Steven K. Roberts
+          = data.site.quote
         - else
           = author.biography

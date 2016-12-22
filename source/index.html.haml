@@ -1,5 +1,5 @@
 ---
-title: Recent Articles
+title: pixelsonly - Recent Articles
 view_class: "index"
 ---
 = partial 'header'
@@ -11,33 +11,33 @@ view_class: "index"
           %li.disabled
             Recent
   - all_articles[0...1].each do |article|
-    %article.article-preview-with-image
+    %article.article-preview-with-image{itemscope: '', itemtype: 'http://schema.org/Article'}
       .row.small-collapse.medium-uncollapse
         .small-12.columns
           = link_to "/articles/#{article.slug}", title: article.title do
             %figure
-              = image_tag "#{article.featuredImage.url}?&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto'
+              = image_tag "#{article.featuredImage.url}?&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto', itemprop: 'image'
               %figcaption
-                %time.publish-date
-                  = format_date(article.date)
-                %h1.article-title
+                %time.publish-date{itemprop: 'datePublished', content: microdata_date(article.date)}
+                  = publish_date(article.date)
+                %h1.article-title{itemprop: 'headline'}
                   = article.title
       .row
         .small-12.columns
-          %p.blurb
+          %p.blurb{itemprop: 'description'}
             = article.blurb
   - all_articles[1..3].each do |article|
-    %article.article-preview
+    %article.article-preview{itemscope: '', itemtype: 'http://schema.org/Article'}
       = link_to "/articles/#{article.slug}", title: article.title do
         .row
           .small-12.columns
             %hr
           .small-3.columns
-            %img{src: "#{article.featuredImage.url}?&w=200&h=200&fit=thumb&r=1000&fm=jpg&fl=progressive", alt: article.featuredImage.description, class: 'article-thumbnail' }
+            = image_tag "#{article.featuredImage.url}?&w=200&h=200&fit=thumb&r=1000&fm=jpg&fl=progressive", alt: article.featuredImage.description, class: 'article-thumbnail', itemprop: 'image'
           .small-9.columns
-            %time.publish-date
-              = format_date(article.date)
-            %h2.article-title
+            %time.publish-date{itemprop: 'datePublished', content: microdata_date(article.date)}
+              = publish_date(article.date)
+            %h2.article-title{itemprop: 'headline'}
               = article.title
   .row
     .small-12.columns

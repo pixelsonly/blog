@@ -2,17 +2,18 @@
 %html
   %head
     %title
-      = current_page.data.title || 'Ryan Lindsey'
+      = current_page.data.title || 'pixelsonly'
     %meta{charset: 'utf-8'}
     %meta{content: 'width=device-width', name: 'viewport'}
     = partial 'meta'
+    %link{rel: 'canonical', href: config[:host] + current_page.url}
     = stylesheet_link_tag '//fonts.googleapis.com/css?family=Open+Sans:400,700,800|Vollkorn:400,700'
     = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
     = stylesheet_link_tag 'highlight'
     = stylesheet_link_tag 'app.bundle'
   %body{class: current_page.data.view_class}
     = yield
-    %footer
+    %footer{role: 'contentinfo'}
       .row
         .small-12.medium-6.columns
           %p.social-links.text-center.medium-text-left
