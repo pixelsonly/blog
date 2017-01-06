@@ -31,9 +31,9 @@
             = DateTime.now.year
             Ryan Lindsey. All rights reserved.
       .row
-        .small-12.columns.text-center.medium-text-left
-          %p
-            = link_to 'https://netlify.com', title: 'Deploys by Netlify' do
-              = image_tag 'https://www.netlify.com/img/global/badges/netlify-color-accent.svg', alt: 'Netlify Logo', class: 'netlify-badge'
+        .small-12.columns
+          %p.text-center
+            = link_to 'https://netlify.com', title: 'Deploys by Netlify', class: 'netlify-badge' do
+              = image_tag 'https://www.netlify.com/img/global/badges/netlify-color-accent.svg', alt: 'Netlify Badge'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'
     = javascript_include_tag 'app.bundle'
