@@ -10,6 +10,8 @@
 @include foundation-typography;
 @include foundation-button;
 @include foundation-breadcrumbs;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
 
 @import "base";
 @import "containers/articles_index";
