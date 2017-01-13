@@ -10,16 +10,14 @@
     :title: Ryan
     :description: Ryan Lindsey 2016
     :url: "//images.contentful.com/v4zq60bqlwhq/5Pbas8LuLKEmkOGyGcY6MM/06c6824cfd07693b2a4d7dafa300c5f1/IMG_0644-ryan-lindsey-1600x1600.jpg"
-  :biography: Developer, gadget lover & adrenaline junkie
+  :biography: Developer, gadget lover, and adrenaline junkie.
 :blurb: For the past few years I've been geo-caching my favorite motorcycle rides
-  with the [Motion-X GPS](https://itunes.apple.com/us/app/motionx-gps/id299949744?mt=8){:target="_blank"}
-  for iOS. It's a great app with tons of features and functionality but it was only
-  solving part of my problem. What I really want is the ability to load my pre-planned
-  or saved routes with turn by turn navigation and voice guidance. I have a power
-  adapter for my iPhone on my motorcyle so I have no issues with constant GPS usage
-  and power consumption.
+  with the Motion-X GPS for iOS. It's a great app with tons of features and functionality
+  but it was only solving part of my problem. What I really want is the ability to
+  load my pre-planned or saved routes with turn by turn navigation and voice guidance.
+  Then I stumbled upon Mapkin, a new player in the navigation app space for iOS.
 :body: "For the past few years I've been geo-caching my favorite motorcycle rides
-  with the [Motion-X GPS](https://itunes.apple.com/us/app/motionx-gps/id299949744?mt=8){:target=\"_blank\"}
+  with the [Motion-X GPS](https://itunes.apple.com/us/app/motionx-gps/id299949744?mt=8)
   for iOS. It's a great app with tons of features and functionality but it was only
   solving part of my problem. What I really want is the ability to load my pre-planned
   or saved routes with turn by turn navigation and voice guidance. I have a power
@@ -30,25 +28,25 @@
   to say the least.\n\nEverything I've tried over the past few months has either been
   cumbersome or unreliable. Just to be clear, I've been looking for an iOS based solution
   without having to spend several hundred dollars on a standalone navigation unit
-  that would need additional power and mounting. \n\n[Motion-X GPS](https://itunes.apple.com/us/app/motionx-gps/id299949744?mt=8){:target=\"_blank\"}\n
+  that would need additional power and mounting. \n\n[Motion-X GPS](https://itunes.apple.com/us/app/motionx-gps/id299949744?mt=8)\n
   \ \n* awesome GPS tracking and geo caching but doesn't offer turn by turn navigation
-  of saved routes\n\n[Motion-X Drive](https://itunes.apple.com/us/app/motionx-gps-drive/id328095974?mt=8){:target=\"_blank\"}\n
+  of saved routes\n\n[Motion-X Drive](https://itunes.apple.com/us/app/motionx-gps-drive/id328095974?mt=8)\n
   \ \n* decent navigation but doesn't allow importing of custom routes\n\n[Google
-  Maps](https://itunes.apple.com/us/app/google-maps/id585027354?mt=8){:target=\"_blank\"}\n\n*
-  great turn by turn navigation with voice guidance and re-routing, but doesn't allow
-  importing of custom maps\n\n[Google Earth](https://itunes.apple.com/us/app/google-earth/id293622097?mt=8){:target=\"_blank\"}\n\n*
+  Maps](https://itunes.apple.com/us/app/google-maps/id585027354?mt=8)\n\n* great turn
+  by turn navigation with voice guidance and re-routing, but doesn't allow importing
+  of custom maps\n\n[Google Earth](https://itunes.apple.com/us/app/google-earth/id293622097?mt=8)\n\n*
   will load saved maps from my Google account but does not offer turn by turn navigation
-  with voice guidance\n\n[Sygic](https://itunes.apple.com/us/app/sygic-gps-navigation-offline/id585193266?mt=8){:target=\"_blank\"}\n\n*
+  with voice guidance\n\n[Sygic](https://itunes.apple.com/us/app/sygic-gps-navigation-offline/id585193266?mt=8)\n\n*
   requires a proprietary file format that I was never able to get working on OSX\n\n[Cycle
-  Meter](https://itunes.apple.com/us/app/cyclemeter-gps-cycling-running/id330595774?mt=8){:target=\"_blank\"}\n\n*
+  Meter](https://itunes.apple.com/us/app/cyclemeter-gps-cycling-running/id330595774?mt=8)\n\n*
   a beautiful app that allows importing of custom routes but is tailored for cyclists
-  and not ideal for motorcycling\n\nI've read that [Navigon](https://itunes.apple.com/us/app/navigon-north-america/id321506742?mt=8){:target=\"_blank\"}
+  and not ideal for motorcycling\n\nI've read that [Navigon](https://itunes.apple.com/us/app/navigon-north-america/id321506742?mt=8)
   has some of the features I'm looking for but I've been burned before and I'm not
   looking to waste $40 on something that might not work.\n\n## Then it dawned on me&hellip;\n\nRather
   than try and create maps on my desktop, convert and import to iOS, maybe someone
   already has an iOS app for creating custom maps with turn by turn navigation. **BINGO**.
-  It's called [Mapkin](http://mapkin.co){:target=\"_blank\"} and it's amazing. [Here
-  is the App Store link](https://itunes.apple.com/us/app/mapkin-maps-gps-personalized/id700227307?mt=8){:target=\"_blank\"}.\n\nI
+  It's called [Mapkin](http://mapkin.co) and it's amazing. [Here is the App Store
+  link](https://itunes.apple.com/us/app/mapkin-maps-gps-personalized/id700227307?mt=8).\n\nI
   built a route from Huntington Beach to Rancho Palos Verdes. I wanted to test how
   well Mapkin works in the real world with many turns and mixed road types. From the
   beginning I was impressed with Mapkin's UI and it's ease of use. I finished my first

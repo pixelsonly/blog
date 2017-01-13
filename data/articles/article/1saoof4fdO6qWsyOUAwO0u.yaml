@@ -10,9 +10,10 @@
     :title: Ryan
     :description: Ryan Lindsey 2016
     :url: "//images.contentful.com/v4zq60bqlwhq/5Pbas8LuLKEmkOGyGcY6MM/06c6824cfd07693b2a4d7dafa300c5f1/IMG_0644-ryan-lindsey-1600x1600.jpg"
-  :biography: Developer, gadget lover & adrenaline junkie
-:blurb: Often times I'll find myself wanting to verify CORS headers on a specific
-  static resource, for example, a webfont.
+  :biography: Developer, gadget lover, and adrenaline junkie.
+:blurb: Verifying CORS headers on a web asset is fairly easy but I find the cURL syntax
+  to be difficult to remember at times. Here I'll show you how to create a simple
+  bash function so you can easily debug CORS headers on any resource.
 :body: |
   Often times I'll find myself wanting to verify CORS headers on a specific static resource, for example, a webfont.
 
@@ -49,7 +50,11 @@
   }
   ~~~
 
-  The first argument will be the domain that will be making the request and the second is the URL of the resource in question.
+  The first argument will be the domain that will be making the request and the second is the URL of the resource in question. See the usage example below:
+
+  ~~~ bash
+  $ corscheck pixelsonly.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/fonts/FontAwesome.otf
+  ~~~
 :category:
 - :id: 11ckGSN1WAom28eEOAOeYS
   :title: Development
