@@ -21,15 +21,6 @@ set :markdown, layout_engine: :haml,
                smartypants:         true,
                fenced_code_blocks:  true
 
-activate :external_pipeline,
-  name: :webpack,
-  command: build? ?
-  './node_modules/webpack/bin/webpack.js --bail -p' :
-  './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
-  source: '.tmp/dist',
-  latency: 1
-
-
 # ------------------------------------------------------------------------------
 # Contentful Configuration
 # ------------------------------------------------------------------------------
@@ -62,43 +53,24 @@ end
 # ------------------------------------------------------------------------------
 # After Middleman Configuration
 # ------------------------------------------------------------------------------
-after_configuration do
-  if data.articles.article?
-    data.articles.article.each do |id, article|
-      proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article }, ignore: true
-    end
-  end
-end
+# after_configuration do
+#   if data.articles.article?
+#     data.articles.article.each do |id, article|
+#       proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article }, ignore: true
+#     end
+#   end
+# end
 
-# ------------------------------------------------------------------------------
-# Environments
-# ------------------------------------------------------------------------------
-configure :development do
-  config[:host] = 'http://localhost:4567'
-
-  activate :livereload,
-    no_swf: true,
-    livereload_css_target: 'assets/stylesheets/app.css.scss',
-    livereload_css_pattern: Regexp.new('_.*\.scss')
-end
-
-configure :staging do
-  config[:host] = 'https://staging.pixelsonly.com'
-end
-
-configure :production do
-  config[:host] = 'https://pixelsonly.com'
-end
 
 # ------------------------------------------------------------------------------
 # Build
 # ------------------------------------------------------------------------------
 configure :build do
   ignore 'assets/javascripts/components'
-  ignore 'assets/stylesheets/components'
-  ignore 'assets/stylesheets/app.css.scss'
+  ignore 'assets/stylesheets/**/*.scss'
 
   activate :asset_hash
+  activate :minify_css
 end
 
 # ------------------------------------------------------------------------------

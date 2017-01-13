@@ -42,15 +42,17 @@ module.exports = {
     includePaths: [__dirname + '/node_modules']
   },
 
-  postcss: [CSSNext],
+  postcss: [
+    CSSNext
+  ],
 
   resolve: {
     root: __dirname + 'assets/javascripts',
-    extensions: ['', '.js', '.json', '.jsx']
+    extensions: ['', '.js', '.json', '.jsx', '.scss']
   },
 
   plugins: [
-    new CleanWebpackPlugin(['.tmp']),
+    // new CleanWebpackPlugin(['.tmp']),
     new ExtractTextPlugin('assets/stylesheets/app.bundle.css', {allChunks: true}),
     new StyleLintPlugin({
       configFile: '.stylelintrc.json',
