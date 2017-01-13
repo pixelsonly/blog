@@ -11,7 +11,8 @@
 /.tmp
 /node_modules
 /build
-/data
+/data/article
+/data/author
 .articles-space-hash
 .authors-space-hash
 .DS_Store
