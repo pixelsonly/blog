@@ -11,9 +11,5 @@
 /.tmp
 /node_modules
 /build
-**/data/articles/article/*.yaml
-**/data/authors/author/*.yaml
-.articles-space-hash
-.authors-space-hash
 .DS_Store
 npm-debug.log
