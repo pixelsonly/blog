@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="30px" viewBox="0 0 40 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>menu--control-open</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Article" transform="translate(-354.000000, -27.000000)" fill="#4A4A4A">
+            <g id="&lt;nav&gt;" transform="translate(354.000000, 27.000000)">
+                <g id="menu--control-open" transform="translate(0.000000, 0.705401)">
+                    <rect id="bottom" x="0" y="24.091653" width="20" height="4.81833061"></rect>
+                    <rect id="middle" x="0" y="12.0458265" width="30" height="4.81833061"></rect>
+                    <rect id="top" x="0" y="-3.55271368e-15" width="40" height="4.81833061"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

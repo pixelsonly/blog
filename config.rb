@@ -49,19 +49,6 @@ activate :contentful do |config|
   }
 end
 
-
-# ------------------------------------------------------------------------------
-# After Middleman Configuration
-# ------------------------------------------------------------------------------
-# after_configuration do
-#   if data.articles.article?
-#     data.articles.article.each do |id, article|
-#       proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article }, ignore: true
-#     end
-#   end
-# end
-
-
 # ------------------------------------------------------------------------------
 # Build
 # ------------------------------------------------------------------------------

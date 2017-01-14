@@ -12,28 +12,12 @@
     = stylesheet_link_tag 'highlight'
     = stylesheet_link_tag 'app.bundle'
   %body{class: current_page.data.view_class}
+    .row
+      .small-12.columns.text-right
+        %button.js-menu-toggle{id: 'menu-open'}
+          = image_tag 'assets/images/menu--control-open.svg'
     = yield
-    %footer{role: 'contentinfo'}
-      .row
-        .small-12.medium-6.columns
-          %p.social-links.text-center.medium-text-left
-            = link_to data.site.social.github.url, title: 'GitHub', class: 'social-link' do
-              %i.fa.fa-github.fa-fw
-            = link_to data.site.social.linkedin.url, title: 'LinkedIn', class: 'social-link' do
-              %i.fa.fa-linkedin.fa-fw
-            = link_to data.site.social.instagram.url, title: 'Instagram', class: 'social-link' do
-              %i.fa.fa-instagram.fa-fw
-            = link_to data.site.social.twitter.url, title: 'Twitter', class: 'social-link' do
-              %i.fa.fa-twitter.fa-fw
-        .small-12.medium-6.columns
-          %p.copyright.text-center.medium-text-right
-            &copy;
-            = DateTime.now.year
-            Ryan Lindsey. All rights reserved.
-      .row
-        .small-12.columns
-          %p.text-center
-            = link_to 'https://netlify.com', title: 'Deploys by Netlify', class: 'netlify-badge' do
-              = image_tag 'https://www.netlify.com/img/global/badges/netlify-color-accent.svg', alt: 'Netlify Badge'
+    = partial 'footer'
+    = partial 'menu'
     = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'
     = javascript_include_tag 'app.bundle'
