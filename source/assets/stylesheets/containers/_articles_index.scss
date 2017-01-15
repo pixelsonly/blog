@@ -6,9 +6,16 @@
     }
   }
 
-  article {
+  .article-preview-with-image {
     p {
       padding: $global-padding / 4 $global-padding / 2;
+      color: $medium-gray;
+    }
+  }
+
+  .article-preview {
+    p {
+      padding: $global-padding / 4 0;
       color: $medium-gray;
     }
   }

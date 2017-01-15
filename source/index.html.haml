@@ -35,6 +35,8 @@
               = publish_date(article.date)
             %h2.article-title{itemprop: 'headline'}
               = article.title
+            %p.blurb{itemprop: 'description'}
+              = truncate(article.blurb, length: 144)
   .row
     .small-12.columns
       = link_to '/articles', title: 'More Articles', class: 'hollow secondary button expanded' do
