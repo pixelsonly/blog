@@ -2,7 +2,7 @@
 %html{lang: 'en'}
   %head
     %title
-      = current_page.data.title || 'pixelsonly'
+      = current_page.data.title || 'Ryan Lindsey - Developer, gadget lover, and adrenaline junkie.'
     %meta{charset: 'utf-8'}
     %meta{content: 'width=device-width', name: 'viewport'}
     = partial 'meta'
@@ -11,7 +11,7 @@
     = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
     = stylesheet_link_tag 'highlight'
     = stylesheet_link_tag 'app.bundle'
-  %body{class: current_page.data.view_class}
+  %body{class: current_page.data.view_class || 'index'}
     .row
       .small-12.columns.text-right
         %button.js-menu-toggle{id: 'menu-open'}
