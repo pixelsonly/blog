@@ -45,3 +45,20 @@ view_class: "article-show"
             = link_to 'Recent', '/', title: 'Recent Articles'
           %li
             = link_to 'Articles', '/articles', title: 'All Articles'
+  .row
+    .small-12.columns
+      - if article.comments?
+        #disqus_thread
+        - content_for :article_comments do
+          :javascript
+            var disqus_config = function () {
+              this.page.url = "#{config[:host] + current_page.url}";
+              this.page.identifier = "#{current_page.url}";
+              this.page.title = "#{article.title}";
+            };
+            (function() {
+              var d = document, s = d.createElement('script');
+              s.src = '//pixelsonly-github-io.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();

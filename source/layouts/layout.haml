@@ -1,5 +1,5 @@
 !!!
-%html
+%html{lang: 'en'}
   %head
     %title
       = current_page.data.title || 'pixelsonly'
@@ -19,5 +19,5 @@
     = yield
     = partial 'footer'
     = partial 'menu'
-    = javascript_include_tag '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'
     = javascript_include_tag 'app.bundle'
+    = yield_content :article_comments
