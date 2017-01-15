@@ -9,7 +9,7 @@ body.menu-open {
   bottom: 0;
   left: 0;
   height: 100vh;
-  background-color: $black;
+  background-color: darken($dark-gray, 15%);
   opacity: 0;
   transition: opacity .3s ease;
   z-index: 99;
