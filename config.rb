@@ -1,5 +1,4 @@
 require 'contentful_middleman'
-require 'lib/article_mapper'
 
 # ------------------------------------------------------------------------------
 # Middleman Configuration
@@ -21,6 +20,50 @@ set :markdown, layout_engine: :haml,
                smartypants:         true,
                fenced_code_blocks:  true
 
+configure :development do
+  config[:host] = 'http://localhost:4567'
+
+  activate :external_pipeline,
+    name: :webpack,
+    command: './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
+    source: '.tmp/dist',
+    latency: 0
+
+  activate :livereload,
+    no_swf: true,
+    livereload_css_target: 'assets/stylesheets/app.css.scss',
+    livereload_css_pattern: Regexp.new('_.*\.scss')
+end
+
+configure :staging do
+  config[:host] = 'https://staging.pixelsonly.com'
+
+  activate :external_pipeline,
+    name: :webpack,
+    command: './node_modules/webpack/bin/webpack.js --bail -p',
+    source: '.tmp/dist',
+    latency: 0
+end
+
+configure :production do
+  config[:host] = 'https://pixelsonly.com'
+
+  activate :external_pipeline,
+    name: :webpack,
+    command: './node_modules/webpack/bin/webpack.js --bail -p',
+    source: '.tmp/dist',
+    latency: 0
+end
+
+ready do
+  puts "#{config[:environment]} => #{config[:host]}"
+end
+
+data.articles.article.each do |id, article|
+  proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article }, ignore: true
+end
+puts "Proxy pages generated successfully!"
+
 # ------------------------------------------------------------------------------
 # Contentful Configuration
 # ------------------------------------------------------------------------------
@@ -30,23 +73,14 @@ activate :contentful do |config|
   }
   config.access_token = ENV['CONTENTFUL_ACCESS_TOKEN']
   config.content_types = {
-    article: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID']
+    article: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID'],
+    author: ENV['CONTENTFUL_MAPPER_AUTHOR_TYPE_ID']
   }
   config.cda_query = {
     content_type: ENV['CONTENTFUL_MAPPER_POST_TYPE_ID'],
-    include: 3,
+    include: 10,
     order: 'fields.date',
     limit: 1000}
-end
-
-activate :contentful do |config|
-  config.space = {
-    authors: ENV['CONTENTFUL_SPACE']
-  }
-  config.access_token = ENV['CONTENTFUL_ACCESS_TOKEN']
-  config.content_types = {
-    author: ENV['CONTENTFUL_MAPPER_AUTHOR_TYPE_ID']
-  }
 end
 
 # ------------------------------------------------------------------------------
@@ -65,7 +99,7 @@ end
 # ------------------------------------------------------------------------------
 helpers do
   def author
-    data.authors.author.first[1]
+    data.articles.article.first[1].author[0]
   end
 
   def sort_by_most_recent(posts)
