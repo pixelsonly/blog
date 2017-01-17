@@ -11,6 +11,12 @@
     = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
     = stylesheet_link_tag 'highlight'
     = stylesheet_link_tag 'app.bundle'
+    - if production?
+      :javascript
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-2516002-12', 'auto');
+        ga('send', 'pageview');
+      <script async src='https://www.google-analytics.com/analytics.js'></script>
   %body{class: current_page.data.view_class || 'index'}
     .row
       .small-12.columns.text-right
@@ -21,9 +27,3 @@
     = partial 'menu'
     = javascript_include_tag 'app.bundle'
     = yield_content :article_comments
-    - if production?
-      :javascript
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', 'UA-2516002-12', 'auto');
-        ga('send', 'pageview');
-      <script async src='https://www.google-analytics.com/analytics.js'></script>
