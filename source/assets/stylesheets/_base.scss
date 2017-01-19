@@ -1,0 +1,8 @@
+body {
+  padding-top: rem-calc($global-padding);
+}
+
+hr {
+  width: 100%;
+  border-color: $light-gray;
+}

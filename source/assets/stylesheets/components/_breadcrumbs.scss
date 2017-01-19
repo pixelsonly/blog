@@ -1,0 +1,13 @@
+.breadcrumbs {
+  li {
+    font-weight: 700;
+
+    &.disabled {
+      color: lighten($medium-gray, 15%);
+    }
+
+    a {
+      color: $medium-gray;
+    }
+  }
+}

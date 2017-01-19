@@ -1,0 +1,15 @@
+.menu{id: 'menu'}
+  .menu-container
+    .row
+      .small-12.columns.text-right
+        %button.js-menu-toggle{id: 'menu-close'}
+          = image_tag 'assets/images/menu--control-close.svg'
+    .row
+      .small-12.columns.text-center
+        %nav{role: 'navigation'}
+          %ul.no-bullet.menu-nav-list
+            %li
+              = link_to 'Home', '/', title: 'Home', class: 'menu-link'
+            %li
+              = link_to 'Articles', '/articles', title: 'Articles', class: 'menu-link'
+          = partial 'social_links'

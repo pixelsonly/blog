@@ -1,0 +1,30 @@
+footer {
+  margin-top: $global-margin * 3;
+  padding: $global-padding * 2 0;
+  border-top: rem-calc(1) solid $light-gray;
+  background-color: lighten($light-gray, 8%);
+
+  .social-links {
+    font-size: rem-calc(36);
+  }
+
+  .social-link {
+    color: $medium-gray;
+
+    &:hover {
+      color: $dark-gray;
+      text-decoration: none;
+    }
+  }
+
+  .copyright {
+    padding-top: $global-padding;
+    font-size: rem-calc(13);
+    color: $gray;
+  }
+
+  .netlify-badge {
+    display: block;
+    margin-top: $global-margin * 2;
+  }
+}

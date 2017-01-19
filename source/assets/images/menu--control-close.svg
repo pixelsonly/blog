@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>menu--control-close</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-355.000000, -23.000000)" fill="#FEFEFE">
+            <g id="&lt;nav&gt;">
+                <g id="menu--panel">
+                    <g id="menu--control-close" transform="translate(355.000000, 22.887070)">
+                        <rect id="45" transform="translate(19.000000, 19.273322) rotate(45.000000) translate(-19.000000, -19.273322) " x="17" y="-4.81833061" width="4" height="48.1833061"></rect>
+                        <rect id="-45" transform="translate(19.000000, 19.273322) rotate(-45.000000) translate(-19.000000, -19.273322) " x="17" y="-4.81833061" width="4" height="48.1833061"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

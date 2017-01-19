@@ -1,0 +1,23 @@
+@charset 'utf-8';
+
+@import 'settings';
+@import '~foundation-sites/scss/foundation';
+
+// @include foundation-everything(true);
+@include foundation-global-styles;
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-breadcrumbs;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+
+@import "base";
+@import "containers/articles_index";
+@import "containers/article_show";
+@import "components/menu";
+@import "components/hero";
+@import "components/buttons";
+@import "components/breadcrumbs";
+@import "components/footer";

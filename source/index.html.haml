@@ -1,0 +1,45 @@
+- current_page.data[:title] = data.site.title
+
+= partial 'header'
+%section.recent-articles
+  .row
+    .small-12.columns
+      %nav{role: 'navigation'}
+        %ul.breadcrumbs
+          %li.disabled
+            Recent
+  - all_articles[0...1].each do |article|
+    %article.article-preview-with-image{itemscope: '', itemtype: 'http://schema.org/Article'}
+      .row.small-collapse.medium-uncollapse
+        .small-12.columns
+          = link_to "/articles/#{article.slug}", title: article.title do
+            %figure
+              = image_tag "#{article.featuredImage.url}?&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto', itemprop: 'image'
+              %figcaption
+                %time.publish-date{itemprop: 'datePublished', content: microdata_date(article.date)}
+                  = publish_date(article.date)
+                %h1.article-title{itemprop: 'headline'}
+                  = article.title
+      .row
+        .small-12.columns
+          %p.blurb{itemprop: 'description'}
+            = article.blurb
+  - all_articles[1..3].each do |article|
+    %article.article-preview{itemscope: '', itemtype: 'http://schema.org/Article'}
+      = link_to "/articles/#{article.slug}", title: article.title do
+        .row
+          .small-12.columns
+            %hr
+          .small-3.columns
+            = image_tag "#{article.featuredImage.url}?&w=200&h=200&fit=thumb&r=1000&fm=jpg&fl=progressive", alt: article.featuredImage.description, class: 'article-thumbnail', itemprop: 'image'
+          .small-9.columns
+            %time.publish-date{itemprop: 'datePublished', content: microdata_date(article.date)}
+              = publish_date(article.date)
+            %h2.article-title{itemprop: 'headline'}
+              = article.title
+            %p.blurb{itemprop: 'description'}
+              = truncate(article.blurb, length: 144)
+  .row
+    .small-12.columns
+      = link_to '/articles', title: 'More Articles', class: 'hollow secondary button expanded' do
+        More Articles

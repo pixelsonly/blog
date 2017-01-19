@@ -1,0 +1,60 @@
+- current_page.data[:view_class] = 'article-show'
+- current_page.data[:title] = article.title
+
+%article{itemscope: '', itemtype: 'http://schema.org/Article'}
+  %header
+    %time.publish-date{itemprop: 'datePublished', content: microdata_date(article.date)}
+      = publish_date(article.date)
+    %h1.article-title{itemprop: 'headline'}
+      = article.title
+    .row
+      .small-12.columns
+        %nav{role: 'navigation'}
+          %ul.breadcrumbs
+            %li
+              = link_to 'Recent', '/', title: 'Recent Articles'
+            %li
+              = link_to 'Articles', '/articles', title: 'All Articles'
+    .row.small-collapse.medium-uncollapse.article-preview-with-image
+      .small-12.columns
+        %figure
+          = image_tag "#{article.featuredImage.url}?w=1000&h=500&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto', itemprop: 'image'
+          %figcaption
+            %span{itemscope: '', itemtype: 'http://schema.org/Person', itemprop: 'author'}
+              = image_tag "#{author.profilePhoto.url}?w=400&r=1000&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto'
+              %p.author-name{itemprop: 'name'}
+                = author.name
+              %small.author-bio{itemprop: 'description'}
+                = author.biography
+  .row
+    .small-12.columns.article-body{itemprop: 'articleBody'}
+      %hr
+      = render_markdown(article.body)
+  .row
+    .small-12.columns
+      %hr
+  .row
+    .small-12.columns
+      %nav{role: 'navigation'}
+        %ul.breadcrumbs
+          %li
+            = link_to 'Recent', '/', title: 'Recent Articles'
+          %li
+            = link_to 'Articles', '/articles', title: 'All Articles'
+  .row
+    .small-12.columns
+      - if article.comments?
+        #disqus_thread
+        - content_for :article_comments do
+          :javascript
+            var disqus_config = function () {
+              this.page.url = "#{config[:host] + current_page.url}";
+              this.page.identifier = "#{current_page.url}";
+              this.page.title = "#{article.title}";
+            };
+            (function() {
+              var d = document, s = d.createElement('script');
+              s.src = '//pixelsonly-github-io.disqus.com/embed.js';
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+            })();
