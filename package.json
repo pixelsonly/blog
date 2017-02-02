@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts":
   {
-    "lint": "npm run stylelint",
+    "lint": "stylelint \"source/assets/stylesheets/**/*.scss\" --syntax scss",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository":
