@@ -18,7 +18,7 @@
     .row.small-collapse.medium-uncollapse.article-preview-with-image
       .small-12.columns
         %figure
-          = image_tag "#{article.featuredImage.url}?w=1000&h=500&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto', itemprop: 'image'
+          = image_tag "#{article.featuredImage.url}?w=1000&h=420&fit=crop&fm=jpg&fl=progressive", alt: article.featuredImage.description, width: '100%', height: 'auto', itemprop: 'image'
           %figcaption
             %span{itemscope: '', itemtype: 'http://schema.org/Person', itemprop: 'author'}
               = image_tag "#{author.profilePhoto.url}?w=400&r=1000&fm=jpg&fl=progressive", alt: author.name, class: 'author-photo', width: '100%', height: 'auto'
