@@ -34,6 +34,26 @@
   .article-body {
     color: $medium-gray;
 
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 800;
+
+      @include breakpoint(medium) {
+        font-weight: 700;
+      }
+    }
+
+    p {
+      font-size: rem-calc(16);
+
+      @include breakpoint(medium) {
+        font-size: rem-calc(19);
+      }
+    }
+
     blockquote {
       border-left: $global-margin / 4 solid $light-gray;
     }
