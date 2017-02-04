@@ -1,5 +1,6 @@
 - current_page.data[:view_class] = 'articles-index'
 - current_page.data[:title] = 'Ryan Lindsey - Thoughts on code, gadgets, and adventure.'
+- current_page.data[:og_images] = [{url: "#{author.profilePhoto.url}?w=600&h=600&r=1000&fm=jpg&fl=progressive", width: 600, height: 600}]
 
 = partial 'header'
 %main{role: 'main', itemprop: 'mainEntityOfPage'}

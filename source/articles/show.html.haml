@@ -1,5 +1,6 @@
 - current_page.data[:view_class] = 'article-show'
 - current_page.data[:title] = article.title
+- current_page.data[:og_images] = [{url:"#{article.featuredImage.url}?w=1200&h=630&fit=crop&fm=jpg&fl=progressive", width: 1200, height: 630}, {url: "#{article.featuredImage.url}?w=600&h=600&fit=crop&fm=jpg&fl=progressive", width: 600, height: 600}, {url: "#{article.featuredImage.url}?w=600&h=315&fit=crop&fm=jpg&fl=progressive", width: 600, height: 315}]
 
 %article{itemscope: '', itemtype: 'http://schema.org/Article'}
   %header
