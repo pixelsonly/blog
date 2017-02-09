@@ -7,9 +7,10 @@ activate :dotenv
 activate :syntax, line_numbers: true
 activate :directory_indexes
 
-config[:css_dir]     = '/assets/stylesheets'
-config[:images_dir]  = '/assets/images'
-config[:js_dir]      = '/assets/javascripts'
+config[:css_dir]           = '/assets/stylesheets'
+config[:images_dir]        = '/assets/images'
+config[:js_dir]            = '/assets/javascripts'
+config[:sass_assets_paths] = ['node_modules/foundation-sites/scss']
 
 set :haml, { ugly: true, format: :html5 }
 
@@ -22,12 +23,13 @@ set :markdown, layout_engine: :haml,
 
 configure :development do
   config[:host] = 'http://localhost:4567'
+  config[:sass_source_maps] = true
 
-  activate :external_pipeline,
-    name: :webpack,
-    command: './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
-    source: '.tmp/dist',
-    latency: 0
+  # activate :external_pipeline,
+  #   name: :webpack,
+  #   command: './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
+  #   source: '.tmp/dist',
+  #   latency: 0
 
   activate :livereload,
     no_swf: true,
@@ -38,31 +40,31 @@ end
 configure :staging do
   config[:host] = 'https://staging.pixelsonly.com'
 
-  activate :external_pipeline,
-    name: :webpack,
-    command: './node_modules/webpack/bin/webpack.js --bail -p',
-    source: '.tmp/dist',
-    latency: 0
+  # activate :external_pipeline,
+  #   name: :webpack,
+  #   command: './node_modules/webpack/bin/webpack.js --bail -p',
+  #   source: '.tmp/dist',
+  #   latency: 0
 end
 
 configure :production do
   config[:host] = 'https://pixelsonly.com'
 
-  activate :external_pipeline,
-    name: :webpack,
-    command: './node_modules/webpack/bin/webpack.js --bail -p',
-    source: '.tmp/dist',
-    latency: 0
+  # activate :external_pipeline,
+  #   name: :webpack,
+  #   command: './node_modules/webpack/bin/webpack.js --bail -p',
+  #   source: '.tmp/dist',
+  #   latency: 0
 end
 
 ready do
-  puts "#{config[:environment]} => #{config[:host]}"
-end
+  puts "Ready => #{config[:environment]} => #{config[:host]}"
 
-data.articles.article.each do |id, article|
-  proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article }, ignore: true
+  data.articles.article.each do |id, article|
+    proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article }, ignore: true
+  end
+  puts "Proxy pages generated successfully!"
 end
-puts "Proxy pages generated successfully!"
 
 # ------------------------------------------------------------------------------
 # Contentful Configuration
