@@ -1,4 +1,5 @@
 require 'contentful_middleman'
+require 'uglifier'
 
 # ------------------------------------------------------------------------------
 # Middleman Configuration
@@ -25,12 +26,6 @@ configure :development do
   config[:host] = 'http://localhost:4567'
   config[:sass_source_maps] = true
 
-  # activate :external_pipeline,
-  #   name: :webpack,
-  #   command: './node_modules/webpack/bin/webpack.js --watch -d --progress --color',
-  #   source: '.tmp/dist',
-  #   latency: 0
-
   activate :livereload,
     no_swf: true,
     livereload_css_target: 'assets/stylesheets/app.css.scss',
@@ -39,31 +34,20 @@ end
 
 configure :staging do
   config[:host] = 'https://staging.pixelsonly.com'
-
-  # activate :external_pipeline,
-  #   name: :webpack,
-  #   command: './node_modules/webpack/bin/webpack.js --bail -p',
-  #   source: '.tmp/dist',
-  #   latency: 0
 end
 
 configure :production do
   config[:host] = 'https://pixelsonly.com'
-
-  # activate :external_pipeline,
-  #   name: :webpack,
-  #   command: './node_modules/webpack/bin/webpack.js --bail -p',
-  #   source: '.tmp/dist',
-  #   latency: 0
 end
 
 ready do
   puts "Ready => #{config[:environment]} => #{config[:host]}"
+end
 
+after_configuration do
   data.articles.article.each do |id, article|
-    proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article }, ignore: true
+    proxy "/articles/#{article.slug}/index.html", 'articles/show.html', locals: {article: article}, ignore: true
   end
-  puts "Proxy pages generated successfully!"
 end
 
 # ------------------------------------------------------------------------------
@@ -94,6 +78,8 @@ configure :build do
 
   activate :asset_hash
   activate :minify_css
+  activate :minify_javascript, compressor: -> { Uglifier.new(mangle: {toplevel: true}, compress: {unsafe: true}) }
+  activate :gzip
 end
 
 # ------------------------------------------------------------------------------
