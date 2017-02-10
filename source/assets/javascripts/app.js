@@ -1,10 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const body    = document.querySelector('body');
-  const menu    = document.querySelector('#menu');
-  const toggles = document.querySelectorAll('.js-menu-toggle');
+'use strict';
 
-  for (const button of toggles) {
-    button.addEventListener('click', (event) => {
+document.addEventListener('DOMContentLoaded', function() {
+  var body    = document.querySelector('body');
+  var menu    = document.querySelector('#menu');
+  var toggles = document.querySelectorAll('.js-menu-toggle');
+
+  toggles.forEach(function(button) {
+    button.addEventListener('click', function(event) {
       if (menu.classList.contains('is-visible')) {
         menu.classList.remove('is-visible');
         body.classList.remove('menu-open');
@@ -13,5 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
         body.classList.add('menu-open');
       }
     }, false);
-  }
+  });
 });
