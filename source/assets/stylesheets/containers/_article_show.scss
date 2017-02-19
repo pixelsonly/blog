@@ -46,7 +46,9 @@
       }
     }
 
-    p {
+    p,
+    ol,
+    ul {
       font-size: rem-calc(16);
 
       @include breakpoint(medium) {
