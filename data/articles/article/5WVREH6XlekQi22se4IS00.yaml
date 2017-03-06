@@ -1,0 +1,63 @@
+---
+:id: 5WVREH6XlekQi22se4IS00
+:title: Upgrading to the next generation of WiFi
+:slug: upgrading-to-the-next-generation-of-wifi
+:author:
+- :id: 6h5OXjiiUoyoIYKkaGmKQ
+  :name: Ryan Lindsey
+  :website: https://pixelsonly.com
+  :profilePhoto:
+    :title: Ryan
+    :description: Ryan Lindsey 2016
+    :url: "//images.contentful.com/v4zq60bqlwhq/5Pbas8LuLKEmkOGyGcY6MM/06c6824cfd07693b2a4d7dafa300c5f1/IMG_0644-ryan-lindsey-1600x1600.jpg"
+  :biography: Developer, gadget lover, and adrenaline junkie.
+:blurb: The latest mesh network technology and hardware are finally making WiFi feel
+  like less of a compromise over traditional hardwired LANs. There are quite a few
+  hardware options from brands large and small, each with their own strengths and
+  weakness.
+:body: "The next generation in consumer WiFi hardware is here with a few big players
+  like [Google](https://madeby.google.com/wifi/) and [Netgear](http://www.netgear.com/home/products/networking/orbi/?cid=us-orbi-srch&utm_source=search&utm_medium=cpc&utm_campaign=q117-us-orbi-search&gclid=CjwKEAiA_p_FBRCRi_mW5Myl4S0SJAAkezZrPIe4McjiXapEeDfXzYHkvpIIR6MZqlfAtl5h49KkNRoCn9bw_wcB)
+  going up against smaller brands such as [Luma](https://lumahome.com), and [Eero](https://eero.com).\n\nA
+  [Wireless mesh network - Wikipedia](https://en.wikipedia.org/wiki/Wireless_mesh_network)
+  (WMN) is fundamentally different than a traditional WiFi router. With a mesh network,
+  you connect one or more nodes to your modem, which will blanket your space with
+  a single network. Say goodbye to switching between access points or jumping between
+  frequency bands.\n\n## Why go mesh?\nMy experience over the past few months with
+  my own WMN has been very positive. The WiFi dead zones that had plagued parts of
+  our living space are gone and overall network performance is noticeably better and
+  more reliable. Having a solid network becomes ever more important as we connect
+  more of our home and lives in general to the Internet.\n\n### Key benefits\n* Can
+  handle larger number of wireless devices\n* Network speeds can be comparable to
+  a hardwired LAN\n* Excellent alternative if you can’t install ethernet\n* More performant
+  and reliable than WiFi range extenders\n* Simple setup and configuration via Apps\n\n##
+  Hardware Options\nAfter deciding which brand meets your needs best, it’s just a
+  matter of determining how many hubs you want to start with. Every brand sells individual
+  hubs for a modest price, but unless you have a small studio apartment, personally
+  I’d recommend buying a 2 or 3-pack and going from there.\n\n### Helpful Reviews\n\n-
+  [The Best Wi-Fi Mesh Networking Kits for Most People - The Wirecutter](http://thewirecutter.com/reviews/best-wi-fi-mesh-networking-kits/)\n-
+  [The Best Wi-Fi Mesh Network Systems of 2017 - PC Mag](http://www.pcmag.com/roundup/350795/the-best-wi-fi-mesh-network-systems)\n-
+  [I tried Google Wifi, Eero, and Orbi - Business Insider](http://www.businessinsider.com/google-wifi-vs-eero-vs-orbi-mesh-wifi-showdown-2016-12)\n\n##
+  Why Luma?\nAfter much reading and consideration I determined the best hardware for
+  my needs was a [Luma 3-pack](http://amzn.to/2lYBZcX). Luma has a compelling product
+  with all of the features I was looking for. \n\nOur home has an L-shaped floor plan
+  and my goal was to have network coverage throughout for connecting all of our devices,
+  smart home accessories as well as a [Plex media server](https://www.plex.tv) and
+  [NAS](https://en.wikipedia.org/wiki/Network-attached_storage).\n\nLuma, Orbi, Eero
+  and Google WiFi all offer similar features and use the exact same Qualcomm silicon
+  (AC1300). However, the features that make Luma stand apart are related to initial
+  setup, device prioritization, security, and Alexa integration.\n\nNetgear’s Orbi
+  is the only offering in the mix that has multiple ethernet ports and a usable USB
+  2.0 port, which was an initial concern I had with Luma, but found it to be a non-issue
+  after some use.\n\n### Likes\n- 24/7 phone or chat support\n- Elegant hardware design
+  & form factor\n- Regular OTA firmware updates\n- Security / malware notifications\n-
+  iOS app for network management\n\n### Dislikes\n- Unusable USB 2.0 port\n- Inability
+  to set custom DNS servers"
+:category:
+- :id: 3JjMkWmSNGsCWmgEaaIcA6
+  :title: Gadgets
+:featuredImage:
+  :title: Luma (Front)
+  :description: Luma WiFi Mesh Router
+  :url: "//images.contentful.com/v4zq60bqlwhq/4rb2qP8rxYM0Wmy0G2oYMa/426b5cdfdcba473b1244b300fb534b64/IMG_1182.jpg"
+:date: !ruby/object:DateTime 2017-02-19 10:30:00.000000000 -08:00
+:comments: true

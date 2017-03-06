@@ -1,0 +1,50 @@
+---
+:id: nqV2LtTsukKeICMG4Uiak
+:title: My Thoughts on Code Review
+:slug: my-thoughts-on-code-review
+:author:
+- :id: 6h5OXjiiUoyoIYKkaGmKQ
+  :name: Ryan Lindsey
+  :website: https://pixelsonly.com
+  :profilePhoto:
+    :title: Ryan
+    :description: Ryan Lindsey 2016
+    :url: "//images.contentful.com/v4zq60bqlwhq/5Pbas8LuLKEmkOGyGcY6MM/06c6824cfd07693b2a4d7dafa300c5f1/IMG_0644-ryan-lindsey-1600x1600.jpg"
+  :biography: Developer, gadget lover, and adrenaline junkie.
+:blurb: A few simple ideas about how to have meaningful code reviews on your development
+  team.
+:body: |-
+  Code review shouldn't be approached as an arduous task, but rather embraced as part of your team's culture. It's a vital part of the software development process that promotes knowledge transfer and best practices across the entire team. It's meant to be a discussion where potential alternatives should be considered while providing deeper understanding for the reviewer. Shared knowledge also empowers a team and distributes the critical path.
+
+  At [RailsConf 2015](https://www.youtube.com/watch?v=PJjmw9TRB7sn), Derek Prior from [Thoughtbot](https://thoughtbot.com) gave a talk about how they approach code reviews. He summed it up quite: "Code reviews are not about catching bugs. Modern code reviews are about socialization, learning and teaching."
+
+  ### Code review takes time. It's supposed to.
+
+  The time and effort spent during review will almost always result in better code with fewer bugs. That being said, the goal isn't to replace your quality assurance team, but rather augment them. Additionally, code reviews provide an opportunity for developers to bring their own expertise and domain knowledge into the conversation, which will further ensure the highest quality output.
+
+  ### Ask questions. Have a conversation.
+
+  It's commonplace that the same feedback given in person is received more positively than when given in written form. This poses an inherent challenge for a reviewer to be able to provide relevant feedback in a positive way. The simplest way to avoid a negative perception is to ask questions. By asking "What do you think about...?" or "Could you explain...?" the reviewer is engaging the author in a conversation where both will benefit.
+
+  There will be occasions when the author and reviewer don't agree. As long as the proposed solution meets the teams's standards and best practices, consideration should be made that more often than not there is more than one way to solve a problem. A reviewer shouldn't reject a solution solely on the basis that it's not the way they would have done it.
+
+  #### As Authors
+
+  When submitting code for review it's imperative for the author provide adequate context for the given solution. Not everyone shares the same knowledge of the code base and context is required for an effective review. This becomes even more important as a team scales. If a reviewer requires more context, pairing up with the author can provide the opportunity to ask questions and gain more understanding.
+
+  #### As Reviewers
+
+  As mentioned earlier, the reviewer should focus on asking questions. Does the code meet our standards and style? Are there syntax errors, typos, or dead code? Is there appropriate test coverage and account for all potential edge-cases? Is this solution properly using our frameworks and libraries? Also, when an author does something well, recognize them for it. A little positive feedback can go a long way.
+
+
+  ### As a Team
+  There's an African proverb that says : "If you want to go fast, go alone. If you want to go far, go together." This sentiment almost seems like commonsense after thinking about it for a moment but it still resonates with me. The take away here is, a team that trusts each other and grows together will be capable of achieving excellence.
+:category:
+- :id: 11ckGSN1WAom28eEOAOeYS
+  :title: Development
+:featuredImage:
+  :title: Code example
+  :description: pexels-photo-270557
+  :url: "//images.contentful.com/v4zq60bqlwhq/dI6JgqLRi8qMmw8mmoIuy/0739b0ed1e274c8d0658c104628a5642/pexels-photo-270557.jpeg"
+:date: !ruby/object:DateTime 2017-01-28 00:00:00.000000000 -08:00
+:comments: true

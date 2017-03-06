@@ -27,8 +27,8 @@
 - :id: 11ckGSN1WAom28eEOAOeYS
   :title: Development
 :featuredImage:
-  :title: Featured Image Fallback
-  :description: 1600x666
-  :url: "//images.contentful.com/v4zq60bqlwhq/3WTvWWX8XmkuS8K0AAIYYK/bf7f3e5fd648c3c5ab0958d9cadec0dc/rectangle-1600x666.jpg"
+  :title: FontAwesome Symbols for Sketch
+  :description: FontAwesome 4.4.4 symbols compatible with Sketch 3+
+  :url: "//images.contentful.com/v4zq60bqlwhq/6pzpLTsisMqU42CikIgqGq/cbcfda7f2e5c5061cf5ae4a7f1e2cd2e/fontawesome-sketch-symbols-featured.jpg"
 :date: !ruby/object:DateTime 2015-07-29 00:00:00.000000000 Z
 :comments: true
