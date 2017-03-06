@@ -54,19 +54,14 @@
       @include breakpoint(medium) {
         font-size: rem-calc(19);
       }
+
+      a {
+        text-decoration: underline;
+      }
     }
 
     blockquote {
       border-left: $global-margin / 4 solid $light-gray;
-    }
-
-    p > a {
-      color: $medium-gray;
-      text-decoration: underline;
-
-      &:hover {
-        color: $dark-gray;
-      }
     }
 
     p > code {
