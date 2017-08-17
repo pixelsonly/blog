@@ -14,14 +14,14 @@ class ArticleTemplate extends Component {
     const {
       id,
       slug,
-      title: { title },
+      date,
       featuredImage,
+      comments,
+      title: { title: title },
       blurb: { childMarkdownRemark: { html: blurb } },
       body: { childMarkdownRemark: { html: body } },
-      date,
       author: [{ name: authorName }],
       category: { title: category },
-      comments,
     } = article;
 
     return (
