@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import injectGlobalStyles from "../styles/global";
+import { IntlProvider } from "react-intl";
 
 const TemplateWrapper = ({ children }) =>
-  <div>
-    {children()}
-  </div>;
+  <IntlProvider locale="en">
+    <div>
+      {children()}
+    </div>
+  </IntlProvider>;
 
 TemplateWrapper.propTypes = {
   children: PropTypes.func,

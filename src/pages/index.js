@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 
-class IndexPage extends React.Component {
+class IndexPage extends Component {
   render() {
     const meta = this.props.data.site.siteMetadata;
     const recentPosts = this.props.data.recentPosts.edges;
@@ -17,7 +17,9 @@ class IndexPage extends React.Component {
         <ul>
           {recentPosts.map(post =>
             <li key={post.node.id}>
-              <Link to={post.node.slug} title={post.node.title.title}>
+              <Link
+                to={`/articles/${post.node.slug}/`}
+                title={post.node.title.title}>
                 {post.node.title.title}
               </Link>
             </li>
@@ -39,7 +41,7 @@ export const pageQuery = graphql`
       }
     }
     recentPosts: allContentfulPost(
-      limit: 4
+      limit: 6
       sort: { fields: [date], order: DESC }
     ) {
       edges {
@@ -73,9 +75,7 @@ export const pageQuery = graphql`
             name
             website
             biography {
-              id
               childMarkdownRemark {
-                id
                 html
               }
             }
