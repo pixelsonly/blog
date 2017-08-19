@@ -1,4 +1,4 @@
-import { rgba } from "polished";
+import { rgba, rem, transparentize } from "polished";
 
 const theme = {
   colors: {
@@ -15,6 +15,38 @@ const theme = {
   fonts: {
     body:
       '-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
+  },
+};
+
+export const menuTheme = {
+  bmBurgerButton: {
+    position: "relative",
+    width: rem("32px"),
+    height: rem("27px"),
+    left: rem("16px"),
+    top: rem("16px"),
+  },
+  bmBurgerBars: {
+    background: theme.colors.mediumGray,
+  },
+  bmCrossButton: {
+    height: rem("32px"),
+    width: rem("32px"),
+  },
+  bmCross: {
+    background: theme.colors.gray,
+  },
+  bmMenu: {
+    background: theme.colors.darkGray,
+  },
+  bmMorphShape: {
+    fill: theme.colors.darkGray,
+  },
+  bmItemList: {
+    // padding: rem("16px"),
+  },
+  bmOverlay: {
+    background: transparentize(0.7, theme.colors.darkGray),
   },
 };
 

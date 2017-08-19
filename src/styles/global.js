@@ -1,19 +1,28 @@
 import { injectGlobal } from "styled-components";
-import { normalize } from "polished";
+import { normalize, rem } from "polished";
 import theme from "./theme";
 
 export const injectGlobalStyles = () => {
   injectGlobal`
     ${normalize()}
 
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
     body {
-      background-color: ${theme.colors.white};
+      min-width: ${rem("320px")};
+      background-color: ${theme.colors.mediumGray};
       font-family: ${theme.fonts.body};
-      color: ${theme.colors.darkGray};
+      color: ${theme.colors.mediumGray};
     }
 
     ::selection {
-      background: ${theme.colors.blue};
+      background: ${theme.colors.pink};
       color: ${theme.colors.white};
     }
   `;

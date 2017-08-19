@@ -2,8 +2,18 @@ const dotenv = require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: `Ryan Lindsey - Recent articles`,
+    title: `Recent articles`,
     description: `Ryan Lindsey - ui engineer + manager, gadget lover & adrenaline junkie`,
+    externalLinks: {
+      github: "https://github.com/pixelsonly",
+      linkedin: "https://linkedin.com/in/pixelsonly",
+      instagram: "https://www.instagram.com/pixelsonly/",
+      twitter: "https://www.twitter.com/pixelsonly",
+    },
+    resume: {
+      website: "https://represent.io/pixelsonly",
+      pdf: "https://represent.io/pixelsonly/pdf",
+    },
   },
   plugins: [
     {

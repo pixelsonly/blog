@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import Link from "gatsby-link";
 import * as PropTypes from "prop-types";
 import { FormattedDate } from "react-intl";
-
-const propTypes = {
-  data: PropTypes.object.isRequired,
-};
+import Container from "../components/container";
 
 class ArticleTemplate extends Component {
   render() {
@@ -25,28 +22,32 @@ class ArticleTemplate extends Component {
     } = article;
 
     return (
-      <article>
-        <h1>
-          {title}
-        </h1>
-        <time>
-          <FormattedDate
-            value={date}
-            year="numeric"
-            month="long"
-            day="2-digit"
-          />
-        </time>
-        <p>
-          {authorName}
-        </p>
-        <main dangerouslySetInnerHTML={{ __html: body }} />
-      </article>
+      <Container>
+        <article>
+          <h1>
+            {title}
+          </h1>
+          <time>
+            <FormattedDate
+              value={date}
+              year="numeric"
+              month="long"
+              day="2-digit"
+            />
+          </time>
+          <p>
+            {authorName}
+          </p>
+          <main dangerouslySetInnerHTML={{ __html: body }} />
+        </article>
+      </Container>
     );
   }
 }
 
-ArticleTemplate.propTypes = propTypes;
+ArticleTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
+};
 
 export default ArticleTemplate;
 
