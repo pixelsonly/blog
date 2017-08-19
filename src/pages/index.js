@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import { FormattedDate } from "react-intl";
 import styled from "styled-components";
-import { space, width, color, fontSize, responsiveStyle } from "styled-system";
+import { space, color, fontSize, responsiveStyle } from "styled-system";
 import { Flex, Box, Grid } from "grid-styled";
 import { rem } from "polished";
 import breakpoint from "../styles/breakpoints";
@@ -108,7 +108,7 @@ class IndexPage extends Component {
         <Flex justify={["center"]} column>
           <Box
             width={[1]}
-            px={[2, 0]}
+            px={[2, 2, 0]}
             pt={[2]}
             itemScope
             itemType="http://schema.org/Person">
@@ -120,7 +120,7 @@ class IndexPage extends Component {
               {tagline}
             </Tagline>
           </Box>
-          <Box width={[1]} px={[2]} py={[2]}>
+          <Box width={[1]} px={[2, 2, 0]} py={[2]}>
             <RecentArticles fontSize={[0]}>Recent Articles</RecentArticles>
             <ArticlesList>
               {recentArticles.map((article, i) =>

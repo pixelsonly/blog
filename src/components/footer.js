@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import styled from "styled-components";
+import { space } from "styled-system";
 import { Flex, Box, Grid } from "grid-styled";
 import { rem } from "polished";
 import breakpoint from "../styles/breakpoints";
@@ -15,6 +16,7 @@ const ContainerStyled = styled(Container)`
 `;
 
 const LegalText = styled.p`
+  ${space};
   color: ${theme.colors.darkGray};
   font-size: ${rem("14px")};
   line-height: normal;
@@ -43,7 +45,7 @@ export default class Footer extends Component {
           justify={["flex-start"]}
           align={["flex-start"]}
           wrap>
-          <Box width={[1, 1 / 4]} mt={[4]}>
+          <Box width={[1, 1 / 4]} mt={[4]} pl={[0, 2, 0]}>
             <Flex justify={["center"]}>
               {Object.keys(links).map((link, i) =>
                 <Box flex={["1 1 auto"]} key={i}>
@@ -59,8 +61,8 @@ export default class Footer extends Component {
               )}
             </Flex>
           </Box>
-          <Box width={[1, 3 / 4]} mt={[4]}>
-            <LegalText>
+          <Box width={[1, 3 / 4]} mt={[4]} pr={[0, 2, 0]}>
+            <LegalText mb={[3]}>
               Copyright &copy; 2005&ndash;{year} Ryan Lindsey. All rights
               reserved.
             </LegalText>
