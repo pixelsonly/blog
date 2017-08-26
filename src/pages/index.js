@@ -142,6 +142,8 @@ export default class IndexPage extends Component {
                           />
                         </ArticleDate>
                         <span itemProp="dateModified" content={date} />
+                        <span itemProp="author" content={authorName} />
+                        <span itemProp="publisher" content={authorName} />
                         <ArticleTitle
                           fontSize={[3, 4]}
                           my={[1]}
@@ -183,7 +185,7 @@ export default class IndexPage extends Component {
                 <ArticleSeparated
                   pt={[2]}
                   itemScope
-                  itemType="http://schema.org/Article"
+                  itemType="http://schema.org/BlogPosting"
                   key={i}>
                   <ArticleLink to={`/articles/${slug}`} title={title}>
                     <Flex px={[2]}>
@@ -207,6 +209,9 @@ export default class IndexPage extends Component {
                             day="2-digit"
                           />
                         </ArticleDate>
+                        <span itemProp="dateModified" content={date} />
+                        <span itemProp="author" content={authorName} />
+                        <span itemProp="publisher" content={authorName} />
                         <ArticleTitle
                           fontSize={[2, 3]}
                           mb={[1]}

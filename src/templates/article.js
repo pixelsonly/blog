@@ -175,6 +175,8 @@ export default class ArticleTemplate extends Component {
               />
             </ArticleDate>
             <span itemProp="dateModified" content={date} />
+            <span itemProp="author" content={authorName} />
+            <span itemProp="publisher" content={authorName} />
             <ArticleTitle px={[2]} itemProp="headline">
               {title}
             </ArticleTitle>
@@ -213,7 +215,9 @@ export default class ArticleTemplate extends Component {
               pb={[2]}
               itemScope
               itemType="http://schema.org/Person"
-              itemProp="author">
+              itemProp="author"
+              rel="author"
+              rel="publisher">
               <AuthorPhoto
                 src={profilePhoto.resize.src}
                 alt={profilePhoto.title}
