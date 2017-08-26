@@ -2,18 +2,14 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Link from "gatsby-link";
 import styled from "styled-components";
-import { space } from "styled-system";
+import { space, fontSize } from "styled-system";
 import { Flex, Box, Grid } from "grid-styled";
 import { rem } from "polished";
 import breakpoint from "../styles/breakpoints";
 import theme from "../styles/theme";
-import Icon from "../components/icons";
+import Icon, { NetlifyBadge, GatsbyBadge } from "../components/icons";
 import ExternalAnchor from "../components/external-anchor";
 import Container from "../components/container";
-
-const ContainerStyled = styled(Container)`
-  min-height: ${rem("180px")};
-`;
 
 const LegalText = styled.p`
   ${space};
@@ -23,6 +19,22 @@ const LegalText = styled.p`
   text-align: center;
 
   ${breakpoint.medium`text-align: right;`};
+`;
+
+const MiscText = styled.p`
+  ${space} ${fontSize};
+  color: ${theme.colors.darkGray};
+  text-align: center;
+
+  ${breakpoint.medium`text-align: right;`};
+
+  a,
+  a:active,
+  a:visited,
+  a:hover {
+    color: ${theme.colors.darkGray};
+    text-decoration: underline;
+  }
 `;
 
 const SocialIconLink = styled(ExternalAnchor)`
@@ -44,7 +56,7 @@ export default class Footer extends Component {
     const year = new Date().getFullYear();
 
     return (
-      <ContainerStyled>
+      <Container>
         <Flex
           is="footer"
           direction="row"
@@ -52,6 +64,7 @@ export default class Footer extends Component {
           align="flex-start"
           wrap
           w={[1]}
+          pb={[4]}
           flex="1 1 auto">
           <Box width={[1, 1 / 4]} mt={[4]} pl={[0, 1, 0]}>
             <Flex justify="center">
@@ -74,9 +87,16 @@ export default class Footer extends Component {
               Copyright &copy; 2005&ndash;{year} Ryan Lindsey. All rights
               reserved.
             </LegalText>
+            <MiscText>
+              <a
+                href="https://www.netlify.com/"
+                title="Continous deployment provided by Netlify">
+                <NetlifyBadge fill={theme.colors.darkGray} />
+              </a>
+            </MiscText>
           </Box>
         </Flex>
-      </ContainerStyled>
+      </Container>
     );
   }
 }
