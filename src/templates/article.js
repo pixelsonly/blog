@@ -236,13 +236,13 @@ export default class ArticleTemplate extends Component {
           </ArticleHeader>
           <ArticleBody
             w={[1]}
-            px={[1]}
+            px={[2, 2, 0]}
             py={[2]}
             is="main"
             itemProp="articleBody"
             dangerouslySetInnerHTML={{ __html: body }}
           />
-          <ArticleComments w={[1]} px={[1]} py={[3]}>
+          <ArticleComments w={[1]} px={[2, 2, 0]} py={[3]}>
             <ReactDisqusComments
               shortname="pixelsonly-github-io"
               identifier={slug}
