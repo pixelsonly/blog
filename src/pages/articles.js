@@ -54,7 +54,7 @@ class ArticlesPage extends Component {
         </Helmet>
         <Flex column>
           <Box width={[1]}>
-            <PageTitle fontSize={[4, 5]} px={[1, 1, 4]} mt={[3]} mb={[3]}>
+            <PageTitle fontSize={[5]} px={[2, 2, 4]} mt={[3]} mb={[3]}>
               Thoughts on technology, work, and adventuring&hellip;
             </PageTitle>
             <nav>
