@@ -143,7 +143,7 @@ export const injectGlobalStyles = () => {
     }
 
     body {
-      background-color: ${theme.colors.mediumGray};
+      background-color: ${theme.colors.midnight};
       font-family: ${theme.fonts.body};
       color: ${theme.colors.mediumGray};
 
