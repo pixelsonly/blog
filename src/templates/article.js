@@ -174,7 +174,7 @@ export default class ArticleTemplate extends Component {
                 day="2-digit"
               />
             </ArticleDate>
-            <ArticleTitle itemProp="headline">
+            <ArticleTitle px={[2]} itemProp="headline">
               {title}
             </ArticleTitle>
             <nav>
