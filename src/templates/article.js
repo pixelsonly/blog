@@ -175,7 +175,7 @@ export default class ArticleTemplate extends Component {
               />
             </ArticleDate>
             <span itemProp="dateModified" content={date} />
-            <span itemProp="publisher" content="@pixelsonly" />
+            <span itemProp="publisher" content={authorName} />
             <ArticleTitle px={[2]} itemProp="headline">
               {title}
             </ArticleTitle>

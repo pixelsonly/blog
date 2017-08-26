@@ -121,7 +121,7 @@ class ArticlesPage extends Component {
                         </ArticleDate>
                         <span itemProp="dateModified" content={date} />
                         <span itemProp="author" content={authorName} />
-                        <span itemProp="publisher" content="@pixelsonly" />
+                        <span itemProp="publisher" content={authorName} />
                         <ArticleTitle my={[1]} itemProp="headline">
                           {title}
                         </ArticleTitle>
