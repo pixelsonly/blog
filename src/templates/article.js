@@ -185,7 +185,7 @@ export default class ArticleTemplate extends Component {
                 direction="row"
                 justify="flex-start"
                 m={[0]}
-                px={[1, 1, 0]}
+                px={[2, 2, 0]}
                 pb={[2]}
                 fontSize={[1]}>
                 <li>
@@ -208,7 +208,7 @@ export default class ArticleTemplate extends Component {
               is="figure"
               direction="column"
               mt={[-3, -3, "-72px"]}
-              mx={[1]}
+              mx={[2]}
               mb={[0]}
               pt={[0, 1]}
               pb={[2]}

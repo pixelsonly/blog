@@ -119,11 +119,7 @@ export default class IndexPage extends Component {
                       alt={featuredImage.title}
                       itemProp="image"
                     />
-                    <Flex
-                      justify={["flex-start"]}
-                      column
-                      px={[1, 2]}
-                      pb={[3, 4]}>
+                    <Flex justify={["flex-start"]} column px={[2]} pb={[3, 4]}>
                       <ArticlePreview
                         width={[1]}
                         mt={[-3, -3, "-72px"]}

@@ -63,7 +63,7 @@ class ArticlesPage extends Component {
                 direction="row"
                 justify="flex-start"
                 m={[0]}
-                px={[1, 1, 0]}
+                px={[2, 2, 0]}
                 pb={[2]}
                 fontSize={[1]}>
                 <li>
@@ -100,7 +100,7 @@ class ArticlesPage extends Component {
                       height={featuredImage.resize.height}
                       itemProp="image"
                     />
-                    <Flex justify={["flex-start"]} column px={[1, 2]} pb={[3]}>
+                    <Flex justify={["flex-start"]} column px={[2]} pb={[3]}>
                       <ArticlePreview
                         width={[1]}
                         mt={[-3, -3, "-72px"]}
