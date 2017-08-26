@@ -109,7 +109,9 @@ export default class IndexPage extends Component {
                 <article itemScope itemType="http://schema.org/Article" key={i}>
                   <ArticleLink to={`/articles/${slug}`} title={title}>
                     <FeaturedImage
-                      src={featuredImage.responsiveSizes.src}
+                      src={featuredImage.resize.src}
+                      width={featuredImage.resize.width}
+                      height={featuredImage.resize.height}
                       alt={featuredImage.title}
                       itemProp="image"
                     />
@@ -286,6 +288,16 @@ export const pageQuery = graphql`
               src
               srcSet
               sizes
+            }
+            resize(
+              width: 900
+              height: 420
+              quality: 80
+              jpegProgressive: true
+            ) {
+              src
+              width
+              height
             }
           }
           thumbnail: featuredImage {

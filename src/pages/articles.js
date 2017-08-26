@@ -80,7 +80,7 @@ class ArticlesPage extends Component {
                   id,
                   title: { title: title },
                   slug,
-                  featuredImage: { file: { url: featuredImage } },
+                  featuredImage,
                   blurb: { blurb: blurb },
                   date,
                   category: { title: category },
@@ -93,8 +93,10 @@ class ArticlesPage extends Component {
                   itemType="http://schema.org/Article">
                   <ArticleLink to={`/articles/${slug}`}>
                     <FeaturedImage
-                      src={`${featuredImage}?q=80&w=900&h=420&fl=progressive&fit=fill`}
-                      alt=""
+                      src={featuredImage.resize.src}
+                      alt={featuredImage.title}
+                      width={featuredImage.resize.width}
+                      height={featuredImage.resize.height}
                       itemProp="image"
                     />
                     <Flex justify={["flex-start"]} column px={[1, 2]} pb={[3]}>
@@ -173,6 +175,16 @@ export const pageQuery = graphql`
             responsiveResolution(width: 400, height: 400) {
               src
               srcSet
+              width
+              height
+            }
+            resize(
+              width: 900
+              height: 420
+              quality: 80
+              jpegProgressive: true
+            ) {
+              src
               width
               height
             }

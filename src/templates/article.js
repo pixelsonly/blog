@@ -196,7 +196,9 @@ export default class ArticleTemplate extends Component {
               </Breadcrumbs>
             </nav>
             <FeaturedImage
-              src={`${featuredImage.responsiveSizes.src}&fl=progressive`}
+              src={featuredImage.resize.src}
+              width={featuredImage.resize.width}
+              height={featuredImage.resize.height}
               alt={featuredImage.title}
               itemProp="image"
             />
@@ -279,9 +281,14 @@ export const articleQuery = graphql`
           srcSet
           sizes
         }
+        resize(width: 900, height: 420, quality: 80, jpegProgressive: true) {
+          src
+          width
+          height
+        }
       }
       ogImage: featuredImage {
-        resize(width: 1200, height: 630, quality: 100, jpegProgressive: true) {
+        resize(width: 1200, height: 630, quality: 80, jpegProgressive: true) {
           src
           width
           height
