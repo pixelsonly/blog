@@ -144,6 +144,7 @@ export default class IndexPage extends Component {
                         </ArticleDate>
                         <span itemProp="dateModified" content={date} />
                         <span itemProp="author" content={authorName} />
+                        <span itemProp="publisher" content="@pixelsonly" />
                         <ArticleTitle
                           fontSize={[3, 4]}
                           my={[1]}
