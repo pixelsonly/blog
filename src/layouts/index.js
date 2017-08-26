@@ -34,7 +34,6 @@ const Nav = styled.nav`
   height: auto;
   position: fixed;
   border-bottom: ${rem("1px")} solid ${lighten(0.03, theme.colors.lightGray)};
-  box-shadow: 0 0 ${rem("10px")} rgba(0, 0, 0, 0.05);
 `;
 
 const NavOpen = styled(Nav)`
