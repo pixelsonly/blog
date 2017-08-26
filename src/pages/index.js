@@ -79,7 +79,8 @@ export default class IndexPage extends Component {
             pt={[2]}
             pb={[3]}
             itemScope
-            itemType="http://schema.org/Person">
+            itemType="http://schema.org/Person"
+            rel="author">
             <ProfilePhoto src={profilePhoto.resize.src} itemProp="image" />
             <AuthorName itemProp="name" mb={[0]}>
               {authorName}
@@ -143,7 +144,6 @@ export default class IndexPage extends Component {
                         </ArticleDate>
                         <span itemProp="dateModified" content={date} />
                         <span itemProp="author" content={authorName} />
-                        <span itemProp="publisher" content={authorName} />
                         <ArticleTitle
                           fontSize={[3, 4]}
                           my={[1]}
@@ -193,6 +193,9 @@ export default class IndexPage extends Component {
                         <Thumbnail
                           src={thumbnail.responsiveSizes.src}
                           alt={thumbnail.title}
+                          width={300}
+                          height={300}
+                          itemProp="image"
                         />
                       </Box>
                       <Box w={[0.7, 0.8]} px={[1]} pt={[1, 2]} pb={[2]}>
@@ -211,7 +214,6 @@ export default class IndexPage extends Component {
                         </ArticleDate>
                         <span itemProp="dateModified" content={date} />
                         <span itemProp="author" content={authorName} />
-                        <span itemProp="publisher" content={authorName} />
                         <ArticleTitle
                           fontSize={[2, 3]}
                           mb={[1]}
