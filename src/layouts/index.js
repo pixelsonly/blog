@@ -9,6 +9,7 @@ import { rem, lighten } from "polished";
 import injectGlobalStyles from "../styles/global";
 import theme, { menuTheme } from "../styles/theme";
 import breakpoint from "../styles/breakpoints";
+import Container from "../components/container";
 import Icon, { MenuOpen, MenuClose } from "../components/icons";
 import ExternalAnchor from "../components/external-anchor";
 import Footer from "../components/footer";
@@ -20,6 +21,8 @@ const NavButton = styled.button`
   display: block;
   width: auto;
   height: auto;
+  margin: 0;
+  padding: 0;
   background: none;
   border: 0;
   cursor: pointer;
@@ -112,14 +115,18 @@ export default class TemplateWrapper extends Component {
         <OuterContainer>
           {isMenuOpen
             ? <NavOpen>
-                <Flex justify="flex-end">
+                <Flex justify="flex-end" mt={[2]} mx={[2, 2, 4]}>
                   <Box px={[1]} py={[1]}>
                     <NavButton onClick={this.closeMenu}>
-                      <MenuClose fill={theme.colors.lightGray} />
+                      <MenuClose
+                        fill={theme.colors.mediumGray}
+                        width="24"
+                        height="24"
+                      />
                     </NavButton>
                   </Box>
                 </Flex>
-                <Flex justify="center" wrap>
+                <Flex justify="center" wrap mx={[2, 2, 4]}>
                   <Box w={[1]} py={[2]} mx={[2]}>
                     <HLineDark />
                   </Box>
@@ -152,8 +159,8 @@ export default class TemplateWrapper extends Component {
                 </Flex>
               </NavOpen>
             : <NavClosed>
-                <Flex justify="flex-end">
-                  <Box px={[1]} py={[1]}>
+                <Flex>
+                  <Box w={[1]} px={[1]} py={[1]}>
                     <NavButton onClick={this.openMenu}>
                       <MenuOpen />
                     </NavButton>
