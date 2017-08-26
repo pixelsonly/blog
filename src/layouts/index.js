@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Link, { navigateTo } from "gatsby-link";
-import Menu from "react-burger-menu/lib/menus/slide";
 import { IntlProvider } from "react-intl";
 import styled from "styled-components";
 import { space, width, height, fontSize, color } from "styled-system";
