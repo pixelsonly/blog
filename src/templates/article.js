@@ -1,55 +1,260 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
 import * as PropTypes from "prop-types";
+import Helmet from "react-helmet";
 import { FormattedDate } from "react-intl";
+import styled from "styled-components";
+import { Flex, Box, Grid } from "grid-styled";
+import { space, fontSize, color, width, height } from "styled-system";
+import { rem } from "polished";
+import ReactDisqusComments from "react-disqus-comments";
+import theme from "../styles/theme";
+import breakpoint from "../styles/breakpoints";
 import Container from "../components/container";
+import { Breadcrumbs, ArticleDate, FeaturedImage } from "../styles/global";
 
-class ArticleTemplate extends Component {
+const Article = styled(Box)`${space} ${width};`;
+
+const ArticleHeader = styled(Flex)`
+  ${space} ${width};
+  text-align: center;
+`;
+
+const ArticleTitle = styled.h1`
+  ${space} ${fontSize};
+  font-family: ${theme.fonts.serif};
+  font-weight: 700;
+`;
+
+const Author = styled(Flex)`
+  ${space} ${width};
+  background-color: ${theme.colors.white};
+  border-bottom: ${rem("2px")} solid ${theme.colors.lightGray};
+  text-align: center;
+`;
+
+const AuthorPhoto = styled.img`
+  ${space} ${width} ${height};
+  width: ${rem("72px")};
+  height: ${rem("72px")};
+  border-radius: ${rem("10000px")};
+`;
+
+const AuthorName = styled.figcaption`
+  ${space} ${fontSize};
+  font-family: ${theme.fonts.serif};
+  font-weight: 700;
+  color: ${theme.colors.mediumGray};
+`;
+
+const AuthorBio = styled.p`
+  ${space} ${fontSize};
+  color: ${theme.colors.gray};
+`;
+
+const ArticleBody = styled(Box)`
+  ${space} ${width};
+
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 0;
+  }
+
+  p, ul, ol {
+    margin-top: ${rem("8px")};
+    color: ${theme.colors.mediumGray};
+    line-height: ${rem("22px")};
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  figure {
+    margin: ${rem("16px")} 0 ${rem("32px")} 0;
+    padding: 0;
+
+    figcaption {
+      padding: ${rem("8px")};
+      border: ${rem("1px")} solid ${theme.colors.lightGray};
+      border-top: 0;
+      font-size: ${rem("14px")};
+    }
+  }
+
+  a {
+    color: ${theme.colors.pink};
+  }
+
+  a:hover {
+    color: ${theme.colors.darkGray};
+  }
+
+  .gatsby-highlight pre[class*="language-"] {
+    background-color: ${theme.colors.darkGray};
+    border-radius: 0;
+    font-size: ${rem("14px")};
+    text-shadow: none;
+  }
+`;
+
+const ArticleComments = styled(Box)`
+  ${space} ${width};
+`;
+
+export default class ArticleTemplate extends Component {
+  static propTypes = { data: PropTypes.object.isRequired };
+
   render() {
-    const article = this.props.data.article;
-
     const {
       id,
       slug,
       date,
+      rawDate,
       featuredImage,
+      ogImage,
       comments,
       title: { title: title },
       blurb: { childMarkdownRemark: { html: blurb } },
       body: { childMarkdownRemark: { html: body } },
-      author: [{ name: authorName }],
+      author: [
+        {
+          name: authorName,
+          profilePhoto: profilePhoto,
+          biography: { biography: authorBio },
+        },
+      ],
       category: { title: category },
-    } = article;
+    } = this.props.data.article;
 
     return (
       <Container>
-        <article>
-          <h1>
+        <Helmet>
+          <title>
             {title}
-          </h1>
-          <time>
-            <FormattedDate
-              value={date}
-              year="numeric"
-              month="long"
-              day="2-digit"
+          </title>
+          <meta property="og:title" content={title} />
+          <meta property="og:site_name" content="pixelsonly" />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:url"
+            content={`https://www.pixelsonly.com/articles/${slug}`}
+          />
+          <meta property="og:image" content={`https:${ogImage.resize.src}`} />
+          <meta property="og:image:width" content={ogImage.resize.width} />
+          <meta property="og:image:height" content={ogImage.resize.height} />
+          <meta property="og:locale" content="en_US" />
+          <meta property="twitter:site" content="@pixelsonly" />
+          <meta property="twitter:title" content={title} />
+          <link
+            rel="canonical"
+            href={`https://www.pixelsonly.com/articles/${slug}`}
+          />
+        </Helmet>
+        <Article
+          w={[1]}
+          flex={["1 1 auto"]}
+          is="article"
+          itemScope
+          itemType="http://schema.org/Article">
+          <ArticleHeader direction={["column"]} is="header">
+            <ArticleDate
+              f={[0, 1]}
+              m={[0]}
+              p={[0]}
+              itemProp="datePublished"
+              content={date}>
+              <FormattedDate
+                value={rawDate}
+                year="numeric"
+                month="long"
+                day="2-digit"
+              />
+            </ArticleDate>
+            <ArticleTitle itemProp="headline">
+              {title}
+            </ArticleTitle>
+            <nav>
+              <Breadcrumbs
+                is="ul"
+                direction="row"
+                justify="flex-start"
+                m={[0]}
+                px={[1, 1, 0]}
+                pb={[2]}
+                fontSize={[1]}>
+                <li>
+                  <Link to={`/`}>Home</Link>
+                </li>
+                <li>/</li>
+                <li>
+                  <Link to={`/articles`}>Articles</Link>
+                </li>
+              </Breadcrumbs>
+            </nav>
+            <FeaturedImage
+              src={`${featuredImage.responsiveSizes.src}&fl=progressive`}
+              alt={featuredImage.title}
+              itemProp="image"
             />
-          </time>
-          <p>
-            {authorName}
-          </p>
-          <main dangerouslySetInnerHTML={{ __html: body }} />
-        </article>
+            <Author
+              is="figure"
+              direction="column"
+              mt={[-4, -4, "-72px"]}
+              mx={[1]}
+              mb={[0]}
+              pt={[0, 1]}
+              pb={[2]}
+              itemScope
+              itemType="http://schema.org/Person"
+              itemProp="author">
+              <AuthorPhoto
+                src={profilePhoto.resize.src}
+                alt={profilePhoto.title}
+                itemProp="image"
+                width={profilePhoto.resize.width}
+                height={profilePhoto.resize.height}
+                my={[1]}
+                mx={["auto"]}
+              />
+              <AuthorName f={[2, 3]} itemProp="name">
+                {authorName}
+              </AuthorName>
+              <AuthorBio
+                p={[0]}
+                mx={[0]}
+                mt={[1]}
+                mb={[0]}
+                f={[0, 0, 1]}
+                itemProp="jobTitle">
+                {authorBio}
+              </AuthorBio>
+            </Author>
+          </ArticleHeader>
+          <ArticleBody
+            w={[1]}
+            px={[1]}
+            py={[2]}
+            is="main"
+            itemProp="articleBody"
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
+          <ArticleComments w={[1]} px={[1]} py={[3]}>
+            <ReactDisqusComments
+              shortname="pixelsonly-github-io"
+              identifier={slug}
+              title={title}
+              url={`https://www.pixelsonly.com/articles/${slug}`}
+            />
+          </ArticleComments>
+        </Article>
       </Container>
     );
   }
 }
-
-ArticleTemplate.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-export default ArticleTemplate;
 
 export const articleQuery = graphql`
   query articleQuery($id: String!) {
@@ -60,17 +265,24 @@ export const articleQuery = graphql`
         title
       }
       featuredImage {
+        title
         file {
           url
         }
-        responsiveSizes(maxWidth: 1000, quality: 80) {
+        responsiveSizes(
+          maxWidth: 900
+          maxHeight: 450
+          quality: 80
+          resizingBehavior: FILL
+        ) {
           src
           srcSet
           sizes
         }
-        responsiveResolution(width: 400, height: 400) {
+      }
+      ogImage: featuredImage {
+        resize(width: 1200, height: 630, quality: 100, jpegProgressive: true) {
           src
-          srcSet
           width
           height
         }
@@ -85,11 +297,13 @@ export const articleQuery = graphql`
           html
         }
       }
-      date
+      date(formatString: "YYYY-MM-DD")
+      rawDate: date
       author {
         name
         website
         biography {
+          biography
           childMarkdownRemark {
             html
           }
@@ -99,10 +313,10 @@ export const articleQuery = graphql`
           file {
             url
           }
-          responsiveSizes(maxWidth: 600) {
+          resize(width: 144, height: 144, quality: 85, jpegProgressive: true) {
             src
-            srcSet
-            sizes
+            width
+            height
           }
         }
       }

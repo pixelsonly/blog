@@ -30,9 +30,15 @@ const SocialIconLink = styled(ExternalAnchor)`
   text-align: center;
 
   ${breakpoint.medium`text-align: left;`};
+
+  &:hover svg {
+    fill: ${theme.colors.lightGray};
+  }
 `;
 
 export default class Footer extends Component {
+  static propTypes = { links: PropTypes.object.isRequired };
+
   render() {
     const { links } = this.props;
     const year = new Date().getFullYear();
@@ -42,11 +48,13 @@ export default class Footer extends Component {
         <Flex
           is="footer"
           direction="row"
-          justify={["flex-start"]}
-          align={["flex-start"]}
-          wrap>
-          <Box width={[1, 1 / 4]} mt={[4]} pl={[0, 2, 0]}>
-            <Flex justify={["center"]}>
+          justify="flex-start"
+          align="flex-start"
+          wrap
+          w={[1]}
+          flex="1 1 auto">
+          <Box width={[1, 1 / 4]} mt={[4]} pl={[0, 1, 0]}>
+            <Flex justify="center">
               {Object.keys(links).map((link, i) =>
                 <Box flex={["1 1 auto"]} key={i}>
                   <SocialIconLink href={links[link]}>
@@ -61,8 +69,8 @@ export default class Footer extends Component {
               )}
             </Flex>
           </Box>
-          <Box width={[1, 3 / 4]} mt={[4]} pr={[0, 2, 0]}>
-            <LegalText mb={[3]}>
+          <Box width={[1, 3 / 4]} mt={[4]} pr={[0, 1, 0]}>
+            <LegalText mb={[3]} px={[1, 0]}>
               Copyright &copy; 2005&ndash;{year} Ryan Lindsey. All rights
               reserved.
             </LegalText>
@@ -72,7 +80,3 @@ export default class Footer extends Component {
     );
   }
 }
-
-Footer.propTypes = {
-  links: PropTypes.object.isRequired,
-};

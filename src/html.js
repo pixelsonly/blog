@@ -21,7 +21,7 @@ module.exports = class HTML extends React.Component {
       );
     }
     return (
-      <html lang="en">
+      <html lang="en" prefix="og: http://ogp.me/ns#">
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -30,6 +30,10 @@ module.exports = class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
+          <link
+            rel="stylesheet"
+            href="//fonts.googleapis.com/css?family=Open+Sans:400,700|Vollkorn:700"
+          />
           {css}
         </head>
         <body>

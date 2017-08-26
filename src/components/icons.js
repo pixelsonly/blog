@@ -22,7 +22,8 @@ const Icon = props =>
     width={props.width}
     height={props.height}
     viewBox={props.viewBox}
-    fill={props.fill}>
+    fill={props.fill}
+    xmlns="http://www.w3.org/2000/svg">
     <path d={paths[props.icon]} />
   </svg>;
 
@@ -39,6 +40,59 @@ Icon.defaultProps = {
   width: "24",
   height: "24",
   viewBox: "0 0 24 24",
+};
+
+export const MenuOpen = props =>
+  <svg
+    width={props.width}
+    height={props.height}
+    viewBox={props.viewBox}
+    xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M0 24.797h20v4.818H0zM0 12.75h30v4.82H0zM0 .705h40v4.818H0z"
+      fill={props.fill}
+      fillRule="evenodd"
+    />
+  </svg>;
+
+MenuOpen.propTypes = {
+  fill: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  viewBox: PropTypes.string,
+};
+
+MenuOpen.defaultProps = {
+  fill: theme.colors.mediumGray,
+  width: "40",
+  height: "30",
+  viewBox: "0 0 40 30",
+};
+
+export const MenuClose = props =>
+  <svg
+    width={props.width}
+    height={props.height}
+    viewBox={props.viewBox}
+    xmlns="http://www.w3.org/2000/svg">
+    <g fill={props.fill} fillRule="evenodd">
+      <path d="M34.62.71l2.83 2.83L3.38 37.61.55 34.782z" />
+      <path d="M.55 3.54L3.38.71l34.07 34.072-2.83 2.828z" />
+    </g>
+  </svg>;
+
+MenuClose.propTypes = {
+  fill: PropTypes.string,
+  width: PropTypes.string,
+  height: PropTypes.string,
+  viewBox: PropTypes.string,
+};
+
+MenuClose.defaultProps = {
+  fill: theme.colors.mediumGray,
+  width: "38",
+  height: "38",
+  viewBox: "0 0 38 38",
 };
 
 export default Icon;

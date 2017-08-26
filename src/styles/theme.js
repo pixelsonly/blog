@@ -1,4 +1,4 @@
-import { rgba, rem, transparentize } from "polished";
+import { rem, transparentize } from "polished";
 
 const theme = {
   colors: {
@@ -6,6 +6,7 @@ const theme = {
     gray: "#9195AD",
     mediumGray: "#656C7A",
     darkGray: "#494E58",
+    midnight: "#26292E",
     black: "#0A0A0A",
     white: "#FEFEFE",
     pink: "#FF358B",
@@ -14,7 +15,8 @@ const theme = {
   },
   fonts: {
     body:
-      '-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
+      '"Open Sans", -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif',
+    serif: '"Vollkorn", Georgia, "Times New Roman", serif',
   },
 };
 
@@ -42,9 +44,7 @@ export const menuTheme = {
   bmMorphShape: {
     fill: theme.colors.darkGray,
   },
-  bmItemList: {
-    // padding: rem("16px"),
-  },
+  bmItemList: {},
   bmOverlay: {
     background: transparentize(0.7, theme.colors.darkGray),
   },

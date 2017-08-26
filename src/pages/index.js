@@ -3,116 +3,84 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import { FormattedDate } from "react-intl";
 import styled from "styled-components";
-import { space, color, fontSize, responsiveStyle } from "styled-system";
+import {
+  space,
+  width,
+  height,
+  color,
+  fontSize,
+  responsiveStyle,
+} from "styled-system";
 import { Flex, Box, Grid } from "grid-styled";
 import { rem } from "polished";
 import breakpoint from "../styles/breakpoints";
 import theme from "../styles/theme";
 import Icon from "../components/icons";
 import Container from "../components/container";
+import Button from "../components/button";
+import {
+  ProfilePhoto,
+  AuthorName,
+  Tagline,
+  RecentArticles,
+  ArticleSeparated,
+  ArticleLink,
+  FeaturedImage,
+  Thumbnail,
+  ArticlePreview,
+  ArticleDate,
+  ArticleTitle,
+  ArticleBlurb,
+  ReadMore,
+} from "../styles/global";
 
-const ProfilePhoto = styled.img`
-  display: block;
-  margin: 0 auto;
-  max-width: 50%;
-  height: auto;
-  border-radius: 1000px;
-
-  ${breakpoint.medium`max-width: 33%;`};
-`;
-
-const AuthorName = styled.h1`
-  ${space} ${fontSize};
-  color: ${theme.colors.darkGray};
-  text-align: center;
-`;
-
-const Tagline = styled.p`
-  ${space} ${fontSize};
-  text-align: center;
-`;
-
-const RecentArticles = styled.h2`
-  ${space} ${fontSize};
-  color: ${theme.colors.gray};
-  text-transform: uppercase;
-`;
-
-const ArticlesList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-
-  li {
-    margin: ${rem("24px")} 0;
-    border-top: 1px solid ${theme.colors.lightGray};
-  }
-
-  li a {
-    display: block;
-    color: ${theme.colors.mediumGray};
-    line-height: normal;
-    text-decoration: none;
-
-    &:hover {
-      color: ${theme.colors.darkGray};
-      text-decoration: none;
-    }
-
-    h3 {
-      margin-top: ${rem("8px")};
-      color: ${theme.colors.mediumGray};
-      font-size: ${rem("16px")};
-    }
-  }
-
-  li p {
-    margin-bottom: ${rem("4px")};
-    font-size: ${rem("13px")};
-    font-weight: lighter;
-    line-height: normal;
-  }
-
-  li small {
-    font-size: ${rem("12px")};
-    text-decoration: underline;
-  }
-
-  li time {
-    display: block;
-    margin: ${rem("16px")} 0;
-    color: ${theme.colors.gray};
-    font-size: ${rem("10px")};
-    text-transform: uppercase;
-  }
-`;
-
-class IndexPage extends Component {
+export default class IndexPage extends Component {
   render() {
     const meta = this.props.data.site.siteMetadata;
     const recentArticles = this.props.data.recentArticles.edges;
     const {
       name: authorName,
       biography: { biography: tagline },
-      profilePhoto: { resize: { src: profilePhoto } },
+      profilePhoto,
     } = this.props.data.authors.edges[0].node;
-
-    const firstArticle = i => (i < 1 ? true : false);
 
     return (
       <Container>
-        <Helmet
-          title={meta.title}
-          meta={[{ name: "description", content: `${meta.description}` }]}
-        />
+        <Helmet>
+          <title>{`Recent articles by ${authorName} - ${tagline}`}</title>
+          <meta
+            property="og:title"
+            content={`Recent articles by ${authorName} - ${tagline}`}
+          />
+          <meta property="og:site_name" content="pixelsonly" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.pixelsonly.com" />
+          <meta
+            property="og:image"
+            content={`https:${profilePhoto.resize.src}`}
+          />
+          <meta property="og:image:width" content={profilePhoto.resize.width} />
+          <meta
+            property="og:image:height"
+            content={profilePhoto.resize.height}
+          />
+          <meta property="og:locale" content="en_US" />
+          <meta property="twitter:site" content="@pixelsonly" />
+          <meta
+            property="twitter:title"
+            content={`Recent articles by ${authorName} - ${tagline}`}
+          />
+          <link rel="canonical" href="https://www.pixelsonly.com" />
+        </Helmet>
         <Flex justify={["center"]} column>
           <Box
             width={[1]}
             px={[2, 2, 0]}
             pt={[2]}
+            pb={[3]}
             itemScope
             itemType="http://schema.org/Person">
-            <ProfilePhoto src={profilePhoto} itemProp="image" />
+            <ProfilePhoto src={profilePhoto.resize.src} itemProp="image" />
             <AuthorName itemProp="name" mb={[0]}>
               {authorName}
             </AuthorName>
@@ -120,41 +88,150 @@ class IndexPage extends Component {
               {tagline}
             </Tagline>
           </Box>
-          <Box width={[1]} px={[2, 2, 0]} py={[2]}>
-            <RecentArticles fontSize={[0]}>Recent Articles</RecentArticles>
-            <ArticlesList>
-              {recentArticles.map((article, i) =>
-                <li key={i}>
-                  <time>
-                    <FormattedDate
-                      value={article.node.date}
-                      year="numeric"
-                      month="long"
-                      day="2-digit"
+          <Box width={[1]}>
+            <RecentArticles fontSize={[2]} mb={[2]} px={[2, 2, 0]}>
+              Recent Articles
+            </RecentArticles>
+            {recentArticles.slice(0, 1).map((article, i) => {
+              const {
+                node: {
+                  id,
+                  title: { title: title },
+                  slug,
+                  featuredImage,
+                  blurb: { blurb: blurb },
+                  date,
+                  rawDate,
+                  category: { title: category },
+                },
+              } = article;
+              return (
+                <article itemScope itemType="http://schema.org/Article" key={i}>
+                  <ArticleLink to={`/articles/${slug}`} title={title}>
+                    <FeaturedImage
+                      src={featuredImage.responsiveSizes.src}
+                      alt={featuredImage.title}
+                      itemProp="image"
                     />
-                  </time>
-                  <Link
-                    to={`/articles/${article.node.slug}`}
-                    title={article.node.title.title}>
-                    <h3>
-                      {article.node.title.title}
-                    </h3>
-                    <p>
-                      {article.node.blurb.blurb}
-                    </p>
-                    <small>Read more</small>
-                  </Link>
-                </li>
-              )}
-            </ArticlesList>
+                    <Flex
+                      justify={["flex-start"]}
+                      column
+                      px={[1, 2]}
+                      pb={[3, 4]}>
+                      <ArticlePreview
+                        width={[1]}
+                        mt={[-4]}
+                        px={[1, 2]}
+                        py={[1, 2]}>
+                        <ArticleDate
+                          fontSize={[0]}
+                          m={[0]}
+                          p={[0]}
+                          itemProp="datePublished"
+                          content={date}>
+                          <FormattedDate
+                            value={date}
+                            year="numeric"
+                            month="long"
+                            day="2-digit"
+                          />
+                        </ArticleDate>
+                        <ArticleTitle
+                          fontSize={[3, 4]}
+                          my={[1]}
+                          mb={[1]}
+                          itemProp="headline">
+                          {title}
+                        </ArticleTitle>
+                        <ArticleBlurb
+                          mt={[0]}
+                          mb={[1]}
+                          fontSize={[1]}
+                          itemProp="description">
+                          {blurb}
+                        </ArticleBlurb>
+                        <ReadMore>Read more</ReadMore>
+                      </ArticlePreview>
+                    </Flex>
+                  </ArticleLink>
+                </article>
+              );
+            })}
+          </Box>
+          <Box width={[1]}>
+            {recentArticles.slice(1).map((article, i) => {
+              const {
+                node: {
+                  id,
+                  title: { title: title },
+                  slug,
+                  featuredImage,
+                  thumbnail,
+                  blurb: { blurb: blurb },
+                  date,
+                  rawDate,
+                  category: { title: category },
+                },
+              } = article;
+              return (
+                <ArticleSeparated
+                  pt={[2]}
+                  itemScope
+                  itemType="http://schema.org/Article"
+                  key={i}>
+                  <ArticleLink to={`/articles/${slug}`} title={title}>
+                    <Flex px={[2]}>
+                      <Box w={[0.3, 0.2]} pr={[1, 2]} pb={[3]}>
+                        <Thumbnail
+                          src={thumbnail.responsiveSizes.src}
+                          alt={thumbnail.title}
+                        />
+                      </Box>
+                      <Box w={[0.7, 0.8]} px={[1]} pt={[1, 2]} pb={[2]}>
+                        <ArticleDate
+                          fontSize={[0]}
+                          m={[0]}
+                          px={[0]}
+                          itemProp="datePublished"
+                          content={date}>
+                          <FormattedDate
+                            value={date}
+                            year="numeric"
+                            month="long"
+                            day="2-digit"
+                          />
+                        </ArticleDate>
+                        <ArticleTitle
+                          fontSize={[2, 3]}
+                          mb={[1]}
+                          itemProp="headline">
+                          {title}
+                        </ArticleTitle>
+                        <ArticleBlurb
+                          mt={[0]}
+                          mb={[1]}
+                          fontSize={[0, 1]}
+                          itemProp="description">
+                          {blurb}
+                        </ArticleBlurb>
+                        <ReadMore>Read more</ReadMore>
+                      </Box>
+                    </Flex>
+                  </ArticleLink>
+                </ArticleSeparated>
+              );
+            })}
+          </Box>
+          <Box width={[1]} px={[2, 2, 0]} pt={[2]} pb={[4]}>
+            <Button to={`/articles`} title="More Articles">
+              More Articles
+            </Button>
           </Box>
         </Flex>
       </Container>
     );
   }
 }
-
-export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageQuery {
@@ -185,7 +262,7 @@ export const pageQuery = graphql`
       }
     }
     recentArticles: allContentfulPost(
-      limit: 3
+      limit: 4
       sort: { fields: [date], order: DESC }
     ) {
       edges {
@@ -196,10 +273,30 @@ export const pageQuery = graphql`
             title
           }
           featuredImage {
+            title
             file {
               url
             }
-            responsiveSizes {
+            responsiveSizes(
+              maxWidth: 900
+              maxHeight: 450
+              quality: 85
+              resizingBehavior: FILL
+            ) {
+              src
+              srcSet
+              sizes
+            }
+          }
+          thumbnail: featuredImage {
+            title
+            responsiveSizes(
+              maxWidth: 300
+              maxHeight: 300
+              quality: 85
+              resizingBehavior: FILL
+            ) {
+              src
               srcSet
               sizes
             }
@@ -215,7 +312,8 @@ export const pageQuery = graphql`
               html
             }
           }
-          date
+          date(formatString: "YYYY-MM-DD")
+          rawDate: date
           author {
             name
             website
