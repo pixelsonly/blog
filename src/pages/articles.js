@@ -102,7 +102,7 @@ class ArticlesPage extends Component {
                     <Flex justify={["flex-start"]} column px={[1, 2]} pb={[3]}>
                       <ArticlePreview
                         width={[1]}
-                        mt={[-4]}
+                        mt={[-3, -3, "-72px"]}
                         px={[1, 2]}
                         py={[1, 2]}>
                         <ArticleDate

@@ -122,7 +122,7 @@ export default class IndexPage extends Component {
                       pb={[3, 4]}>
                       <ArticlePreview
                         width={[1]}
-                        mt={[-4]}
+                        mt={[-3, -3, "-72px"]}
                         px={[1, 2]}
                         py={[1, 2]}>
                         <ArticleDate

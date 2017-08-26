@@ -205,7 +205,7 @@ export default class ArticleTemplate extends Component {
             <Author
               is="figure"
               direction="column"
-              mt={[-3, -4, "-72px"]}
+              mt={[-3, -3, "-72px"]}
               mx={[1]}
               mb={[0]}
               pt={[0, 1]}
