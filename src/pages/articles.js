@@ -90,7 +90,7 @@ class ArticlesPage extends Component {
                 <article
                   key={id}
                   itemScope
-                  itemType="http://schema.org/Article">
+                  itemType="http://schema.org/BlogPosting">
                   <ArticleLink to={`/articles/${slug}`}>
                     <FeaturedImage
                       src={featuredImage.resize.src}
@@ -118,6 +118,7 @@ class ArticlesPage extends Component {
                             day="2-digit"
                           />
                         </ArticleDate>
+                        <span itemProp="dateModified" content={date} />
                         <ArticleTitle my={[1]} itemProp="headline">
                           {title}
                         </ArticleTitle>

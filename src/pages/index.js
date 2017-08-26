@@ -106,7 +106,10 @@ export default class IndexPage extends Component {
                 },
               } = article;
               return (
-                <article itemScope itemType="http://schema.org/Article" key={i}>
+                <article
+                  itemScope
+                  itemType="http://schema.org/BlogPosting"
+                  key={i}>
                   <ArticleLink to={`/articles/${slug}`} title={title}>
                     <FeaturedImage
                       src={featuredImage.resize.src}
@@ -138,6 +141,7 @@ export default class IndexPage extends Component {
                             day="2-digit"
                           />
                         </ArticleDate>
+                        <span itemProp="dateModified" content={date} />
                         <ArticleTitle
                           fontSize={[3, 4]}
                           my={[1]}

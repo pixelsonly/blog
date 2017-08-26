@@ -159,7 +159,7 @@ export default class ArticleTemplate extends Component {
           flex={["1 1 auto"]}
           is="article"
           itemScope
-          itemType="http://schema.org/Article">
+          itemType="http://schema.org/BlogPosting">
           <ArticleHeader direction={["column"]} is="header">
             <ArticleDate
               f={[0, 1]}
@@ -174,6 +174,7 @@ export default class ArticleTemplate extends Component {
                 day="2-digit"
               />
             </ArticleDate>
+            <span itemProp="dateModified" content={date} />
             <ArticleTitle px={[2]} itemProp="headline">
               {title}
             </ArticleTitle>
@@ -244,7 +245,7 @@ export default class ArticleTemplate extends Component {
             itemProp="articleBody"
             dangerouslySetInnerHTML={{ __html: body }}
           />
-          <ArticleComments w={[1]} px={[2, 2, 0]} py={[3]}>
+          <ArticleComments w={[1]} px={[2, 2, 0]} py={[3]} itemProp="comment">
             <ReactDisqusComments
               shortname="pixelsonly-github-io"
               identifier={slug}
