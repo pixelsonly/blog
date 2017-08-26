@@ -205,7 +205,7 @@ export default class ArticleTemplate extends Component {
             <Author
               is="figure"
               direction="column"
-              mt={[-4, -4, "-72px"]}
+              mt={[-3, -4, "-72px"]}
               mx={[1]}
               mb={[0]}
               pt={[0, 1]}
@@ -281,14 +281,14 @@ export const articleQuery = graphql`
           srcSet
           sizes
         }
-        resize(width: 900, height: 420, quality: 80, jpegProgressive: true) {
+        resize(width: 1200, height: 630, quality: 85, jpegProgressive: true) {
           src
           width
           height
         }
       }
       ogImage: featuredImage {
-        resize(width: 1200, height: 630, quality: 80, jpegProgressive: true) {
+        resize(width: 1200, height: 630, quality: 85, jpegProgressive: true) {
           src
           width
           height
