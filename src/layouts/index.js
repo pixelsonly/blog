@@ -5,7 +5,7 @@ import { IntlProvider } from "react-intl";
 import styled from "styled-components";
 import { space, width, height, fontSize, color } from "styled-system";
 import { Flex, Box, Grid } from "grid-styled";
-import { rem } from "polished";
+import { rem, lighten } from "polished";
 import injectGlobalStyles from "../styles/global";
 import theme, { menuTheme } from "../styles/theme";
 import breakpoint from "../styles/breakpoints";
@@ -33,7 +33,8 @@ const Nav = styled.nav`
   width: 100%;
   height: auto;
   position: fixed;
-  border-bottom: ${rem("1px")} solid ${theme.colors.lightGray};
+  border-bottom: ${rem("1px")} solid ${lighten(0.03, theme.colors.lightGray)};
+  box-shadow: 0 0 ${rem("10px")} rgba(0, 0, 0, 0.05);
 `;
 
 const NavOpen = styled(Nav)`
@@ -113,7 +114,7 @@ export default class TemplateWrapper extends Component {
           {isMenuOpen
             ? <NavOpen>
                 <Flex justify="flex-end">
-                  <Box p={[1]}>
+                  <Box px={[1]} py={[1]}>
                     <NavButton onClick={this.closeMenu}>
                       <MenuClose fill={theme.colors.lightGray} />
                     </NavButton>
@@ -153,14 +154,14 @@ export default class TemplateWrapper extends Component {
               </NavOpen>
             : <NavClosed>
                 <Flex justify="flex-end">
-                  <Box p={[1]}>
+                  <Box px={[1]} py={[1]}>
                     <NavButton onClick={this.openMenu}>
                       <MenuOpen />
                     </NavButton>
                   </Box>
                 </Flex>
               </NavClosed>}
-          <PageContainer is="main" pt={[rem("72px")]}>
+          <PageContainer is="main" pt={[rem("80px")]}>
             {this.props.children()}
           </PageContainer>
           <Footer links={externalLinks} />
