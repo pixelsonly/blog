@@ -5,13 +5,14 @@ import { rem } from "polished";
 
 const ContainerStyled = styled(Flex)`
   min-width: ${rem("320px")};
-  max-width: ${rem("900px")};
+  max-width: ${rem("800px")};
   margin: 0 auto;
 `;
 
-const Container = props =>
+const Container = props => (
   <ContainerStyled className={props.className}>
     {props.children}
-  </ContainerStyled>;
+  </ContainerStyled>
+);
 
 export default Container;
