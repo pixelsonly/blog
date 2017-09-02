@@ -29,7 +29,7 @@ const ArticleTitle = styled.h1`
 const Author = styled(Flex)`
   ${space} ${width};
   background-color: ${theme.colors.white};
-  border-bottom: ${rem("2px")} solid ${theme.colors.lightGray};
+  border-bottom: ${rem("1px")} solid ${theme.colors.lightGray};
   text-align: center;
 `;
 
@@ -61,10 +61,16 @@ const ArticleBody = styled(Box)`
     margin-bottom: 0;
   }
 
-  p, ul, ol {
+  p,
+  ul,
+  ol {
     margin-top: ${rem("8px")};
     color: ${theme.colors.mediumGray};
     line-height: ${rem("22px")};
+  }
+
+  p img {
+    margin: 0 auto;
   }
 
   img {
@@ -101,9 +107,7 @@ const ArticleBody = styled(Box)`
   }
 `;
 
-const ArticleComments = styled(Box)`
-  ${space} ${width};
-`;
+const ArticleComments = styled(Box)`${space} ${width};`;
 
 export default class ArticleTemplate extends Component {
   static propTypes = { data: PropTypes.object.isRequired };
@@ -133,9 +137,7 @@ export default class ArticleTemplate extends Component {
     return (
       <Container>
         <Helmet>
-          <title>
-            {title}
-          </title>
+          <title>{title}</title>
           <meta property="og:title" content={title} />
           <meta property="og:site_name" content="pixelsonly" />
           <meta property="og:type" content="website" />
