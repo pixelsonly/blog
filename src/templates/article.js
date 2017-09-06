@@ -91,11 +91,11 @@ const ArticleBody = styled(Box)`
     }
   }
 
-  a {
+  p > a {
     color: ${theme.colors.pink};
   }
 
-  a:hover {
+  p > a:hover {
     color: ${theme.colors.darkGray};
   }
 
