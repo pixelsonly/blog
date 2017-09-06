@@ -9,6 +9,7 @@ const theme = {
     midnight: "#26292E",
     black: "#0A0A0A",
     white: "#FEFEFE",
+    red: "#D40000",
     pink: "#FF358B",
     blue: "#01B0F0",
     green: "#AEEE00",
