@@ -113,60 +113,62 @@ export default class TemplateWrapper extends Component {
     return (
       <IntlProvider locale="en">
         <OuterContainer>
-          {isMenuOpen
-            ? <NavOpen>
-                <Flex justify="flex-end" mt={[2]} mx={[2, 2, 4]}>
-                  <Box px={[1]} py={[1]}>
-                    <NavButton onClick={this.closeMenu}>
-                      <MenuClose
-                        fill={theme.colors.mediumGray}
-                        width="24"
-                        height="24"
+          {isMenuOpen ? (
+            <NavOpen>
+              <Flex justify="flex-end" mt={[2]} mx={[2, 2, 4]}>
+                <Box px={[1]} py={[1]}>
+                  <NavButton onClick={this.closeMenu}>
+                    <MenuClose
+                      fill={theme.colors.mediumGray}
+                      width="24"
+                      height="24"
+                    />
+                  </NavButton>
+                </Box>
+              </Flex>
+              <Flex justify="center" wrap mx={[2, 2, 4]}>
+                <Box w={[1]} py={[2]} mx={[2]}>
+                  <HLineDark />
+                </Box>
+                <Box py={[3]}>
+                  <NavLink onClick={this.closeMenu} to={`/`} fontSize={[4]}>
+                    Home
+                  </NavLink>
+                  <NavLink
+                    onClick={this.closeMenu}
+                    to={`/articles`}
+                    fontSize={[4]}>
+                    Articles
+                  </NavLink>
+                </Box>
+                <Box w={[1]} py={[2]} mx={[2]}>
+                  <HLineDark />
+                </Box>
+                {Object.keys(externalLinks).map((link, i) => (
+                  <Box w={[0.25]} pt={[3]} key={i}>
+                    <SocialIconLink href={externalLinks[link]}>
+                      <Icon
+                        icon={link}
+                        width="36"
+                        height="36"
+                        fill={theme.colors.darkGray}
                       />
-                    </NavButton>
+                    </SocialIconLink>
                   </Box>
-                </Flex>
-                <Flex justify="center" wrap mx={[2, 2, 4]}>
-                  <Box w={[1]} py={[2]} mx={[2]}>
-                    <HLineDark />
-                  </Box>
-                  <Box py={[3]}>
-                    <NavLink onClick={this.closeMenu} to={`/`} fontSize={[4]}>
-                      Home
-                    </NavLink>
-                    <NavLink
-                      onClick={this.closeMenu}
-                      to={`/articles`}
-                      fontSize={[4]}>
-                      Articles
-                    </NavLink>
-                  </Box>
-                  <Box w={[1]} py={[2]} mx={[2]}>
-                    <HLineDark />
-                  </Box>
-                  {Object.keys(externalLinks).map((link, i) =>
-                    <Box w={[0.25]} pt={[3]} key={i}>
-                      <SocialIconLink href={externalLinks[link]}>
-                        <Icon
-                          icon={link}
-                          width="36"
-                          height="36"
-                          fill={theme.colors.darkGray}
-                        />
-                      </SocialIconLink>
-                    </Box>
-                  )}
-                </Flex>
-              </NavOpen>
-            : <NavClosed>
-                <Flex>
-                  <Box w={[1]} px={[1]} py={[1]}>
-                    <NavButton onClick={this.openMenu}>
-                      <MenuOpen />
-                    </NavButton>
-                  </Box>
-                </Flex>
-              </NavClosed>}
+                ))}
+              </Flex>
+            </NavOpen>
+          ) : (
+            <NavClosed>
+              <Flex>
+                <Box w={[1]} px={[1]} py={[1]}>
+                  <NavButton onClick={this.openMenu}>
+                    <MenuOpen />
+                  </NavButton>
+                </Box>
+              </Flex>
+            </NavClosed>
+          )}
           <PageContainer is="main" pt={[rem("80px")]}>
             {this.props.children()}
           </PageContainer>

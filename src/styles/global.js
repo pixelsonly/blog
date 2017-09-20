@@ -112,7 +112,9 @@ export const Breadcrumbs = styled(Flex)`
     color: ${theme.colors.lightGray};
   }
 
-  a, a:active, a:visited {
+  a,
+  a:active,
+  a:visited {
     color: ${theme.colors.mediumGray};
     text-decoration: none;
   }

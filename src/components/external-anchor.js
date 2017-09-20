@@ -7,12 +7,13 @@ import theme from "../styles/theme";
 
 const AnchorStyled = styled.a`text-decoration: none;`;
 
-const ExternalAnchor = props =>
+const ExternalAnchor = props => (
   <AnchorStyled
     href={props.href}
     title={props.title}
     className={props.className}>
     {props.children}
-  </AnchorStyled>;
+  </AnchorStyled>
+);
 
 export default ExternalAnchor;

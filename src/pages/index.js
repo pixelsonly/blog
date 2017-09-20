@@ -85,9 +85,7 @@ export default class IndexPage extends Component {
             <AuthorName itemProp="name" mb={[0]}>
               {authorName}
             </AuthorName>
-            <Tagline itemProp="jobTitle">
-              {tagline}
-            </Tagline>
+            <Tagline itemProp="jobTitle">{tagline}</Tagline>
           </Box>
           <Box width={[1]}>
             <RecentArticles fontSize={[2]} mb={[2]} px={[2, 2, 0]}>

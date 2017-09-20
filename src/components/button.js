@@ -28,10 +28,11 @@ const LinkStyled = styled(Link)`
   }
 `;
 
-const Button = props =>
+const Button = props => (
   <LinkStyled className={props.className} to={props.to} title={props.title}>
     {props.children}
-  </LinkStyled>;
+  </LinkStyled>
+);
 
 export default Button;
 
