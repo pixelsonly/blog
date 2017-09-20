@@ -17,6 +17,14 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#FF358B`,
+        showSpinner: false,
+        trickle: false,
+      },
+    },
+    {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `${process.env.CONTENTFUL_SPACE}`,
