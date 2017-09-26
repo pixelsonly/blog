@@ -1,32 +1,24 @@
 {
   "name": "@pixelsonly/blog",
-  "description": "Ryan Lindsey's blog, built with Gatsby/React + Contentful, continously deployed with Netlify",
+  "description":
+    "Ryan Lindsey's blog, built with Gatsby/React + Contentful, continously deployed with Netlify",
   "version": "3.0.0",
   "private": true,
   "author": "Ryan Lindsey <ryan@pixelsonly.com>",
   "dependencies": {
     "dotenv": "^4.0.0",
-    "gatsby": "1.9.38",
-    "gatsby-link": "1.6.16",
+    "gatsby": "1.9.44",
+    "gatsby-link": "1.6.17",
     "gatsby-plugin-react-helmet": "1.0.6",
     "gatsby-plugin-styled-components": "1.0.5",
     "gatsby-remark-prismjs": "1.2.8",
-    "gatsby-source-contentful": "1.3.9",
-    "gatsby-transformer-remark": "1.7.8",
+    "gatsby-source-contentful": "1.3.13",
+    "gatsby-transformer-remark": "1.7.12",
     "grid-styled": "^2.0.0-10",
     "polished": "1.7.0",
-    "react-disqus-comments": "^1.0.3",
+    "react-disqus-comments": "1.0.3",
     "styled-system": "1.0.0-15"
   },
-  "keywords": [
-    "gatsby",
-    "react",
-    "styled-components",
-    "polished",
-    "contentful",
-    "prettier",
-    "netlify"
-  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -41,5 +33,6 @@
     "prettier": "1.7.0",
     "react-intl": "2.4.0",
     "slash": "^1.0.0"
-  }
+  },
+  "browserlist": "> 5%"
 }
