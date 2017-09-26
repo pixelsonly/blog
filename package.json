@@ -43,5 +43,5 @@
     "react-intl": "2.4.0",
     "slash": "^1.0.0"
   },
-  "browsers": "> 5%"
+  "browserlist": "> 5%"
 }
