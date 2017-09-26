@@ -1,6 +1,7 @@
 {
   "name": "@pixelsonly/blog",
-  "description": "Ryan Lindsey's blog, built with Gatsby/React + Contentful, continously deployed with Netlify",
+  "description":
+    "Ryan Lindsey's blog, built with Gatsby/React + Contentful, continously deployed with Netlify",
   "version": "3.0.0",
   "private": true,
   "author": "Ryan Lindsey <ryan@pixelsonly.com>",
@@ -41,5 +42,6 @@
     "prettier": "1.7.0",
     "react-intl": "2.4.0",
     "slash": "^1.0.0"
-  }
+  },
+  "browsers": "> 5%"
 }
