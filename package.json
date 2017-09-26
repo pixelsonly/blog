@@ -1,6 +1,7 @@
 {
   "name": "@pixelsonly/blog",
-  "description": "Ryan Lindsey's blog, built with Gatsby/React + Contentful, continously deployed with Netlify",
+  "description":
+    "Ryan Lindsey's blog, built with Gatsby/React + Contentful, continously deployed with Netlify",
   "version": "3.0.0",
   "private": true,
   "author": "Ryan Lindsey <ryan@pixelsonly.com>",
@@ -15,18 +16,9 @@
     "gatsby-transformer-remark": "1.7.12",
     "grid-styled": "^2.0.0-10",
     "polished": "1.7.0",
-    "react-disqus-comments": "1.1.0",
+    "react-disqus-comments": "1.0.3",
     "styled-system": "1.0.0-15"
   },
-  "keywords": [
-    "gatsby",
-    "react",
-    "styled-components",
-    "polished",
-    "contentful",
-    "prettier",
-    "netlify"
-  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
