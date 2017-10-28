@@ -5726,9 +5726,9 @@ pleeease-filters@^3.0.0:
     onecolor "~2.4.0"
     postcss "^5.0.4"
 
-polished@1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/polished/-/polished-1.7.0.tgz#cfc55113f52e9ecec7c84dbd0c708b9a3235d7c3"
+polished@1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-1.8.1.tgz#e50b9f789d37d98da64912f1be2bf759d8bfae6c"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
