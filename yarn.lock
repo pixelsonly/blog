@@ -3553,14 +3553,14 @@ gray-matter@^2.1.0:
     js-yaml "^3.8.1"
     toml "^2.3.2"
 
-grid-styled@^2.0.0-10:
-  version "2.0.0-10"
-  resolved "https://registry.yarnpkg.com/grid-styled/-/grid-styled-2.0.0-10.tgz#d6e8254680027f3cf04a21d2d29e1f89dc24a622"
+grid-styled@2.0.0-11:
+  version "2.0.0-11"
+  resolved "https://registry.yarnpkg.com/grid-styled/-/grid-styled-2.0.0-11.tgz#4cf40503bfe202e7764f08a5346adb99f6fdf260"
   dependencies:
-    prop-types "^15.5.10"
-    styled-components "^2.0.1"
-    styled-system "^1.0.0-9"
-    tag-hoc "^1.0.0-0"
+    prop-types "^15.6.0"
+    styled-components "^2.2.0"
+    styled-system "^1.0.2"
+    tag-hoc "^1.0.0"
 
 h2o2@4.x.x:
   version "4.0.2"
@@ -7719,7 +7719,7 @@ style-loader@^0.13.0:
   dependencies:
     loader-utils "^1.0.2"
 
-styled-components@^2.0.0, styled-components@^2.0.1:
+styled-components@^2.0.0:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.1.2.tgz#bb419978e1287c5d0d88fa9106b2dd75f66a324c"
   dependencies:
@@ -7733,13 +7733,25 @@ styled-components@^2.0.0, styled-components@^2.0.1:
     stylis "^3.2.1"
     supports-color "^3.2.3"
 
-styled-system@1.0.0-15:
-  version "1.0.0-15"
-  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-1.0.0-15.tgz#1f93fd06eb941a952e62003f79792a0e814e6707"
+styled-components@^2.2.0:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.2.2.tgz#a00c4b7a432ff77e5fb962ec1fbc030248d27171"
+  dependencies:
+    buffer "^5.0.3"
+    css-to-react-native "^2.0.3"
+    fbjs "^0.8.9"
+    hoist-non-react-statics "^1.2.0"
+    is-function "^1.0.1"
+    is-plain-object "^2.0.1"
+    prop-types "^15.5.4"
+    stylis "3.x"
+    supports-color "^3.2.3"
 
-styled-system@^1.0.0-9:
-  version "1.0.0-12"
-  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-1.0.0-12.tgz#e2f72a2ef25fa3fc91612433595a23cd6a11f59b"
+styled-system@1.0.8, styled-system@^1.0.2:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/styled-system/-/styled-system-1.0.8.tgz#a5a08ab26a8cc27e7a22e743d623211b82482b5e"
+  dependencies:
+    prop-types "^15.6.0"
 
 stylis@3.x:
   version "3.4.0"
@@ -7828,7 +7840,7 @@ systemjs@^0.19.46:
   dependencies:
     when "^3.7.5"
 
-tag-hoc@^1.0.0-0:
+tag-hoc@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/tag-hoc/-/tag-hoc-1.0.0.tgz#36ddc5f8831c40926ea520743cbddcc34f3c3ed9"
 
