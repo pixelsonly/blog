@@ -37,5 +37,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-next`,
+    `gatsby-plugin-netlify`
   ],
 }
