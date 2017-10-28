@@ -171,7 +171,7 @@ export const pageQuery = graphql`
             file {
               url
             }
-            responsiveSizes(maxWidth: 900, quality: 80) {
+            responsiveSizes(maxWidth: 900, quality: 85) {
               src
               srcSet
               sizes
