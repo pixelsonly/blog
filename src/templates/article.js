@@ -13,7 +13,9 @@ import breakpoint from "../styles/breakpoints";
 import Container from "../components/container";
 import { Breadcrumbs, ArticleDate, FeaturedImage } from "../styles/global";
 
-const Article = styled(Box)`${space} ${width};`;
+const Article = styled(Box)`
+  ${space} ${width};
+`;
 
 const ArticleHeader = styled(Flex)`
   ${space} ${width};
@@ -107,7 +109,9 @@ const ArticleBody = styled(Box)`
   }
 `;
 
-const ArticleComments = styled(Box)`${space} ${width};`;
+const ArticleComments = styled(Box)`
+  ${space} ${width};
+`;
 
 export default class ArticleTemplate extends Component {
   static propTypes = { data: PropTypes.object.isRequired };
