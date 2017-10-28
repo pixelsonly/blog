@@ -68,7 +68,7 @@ export default class Footer extends Component {
           flex="1 1 auto">
           <Box width={[1, 1 / 4]} mt={[4]} pl={[0, 1, 0]}>
             <Flex justify="center">
-              {Object.keys(links).map((link, i) =>
+              {Object.keys(links).map((link, i) => (
                 <Box flex={["1 1 auto"]} key={i}>
                   <SocialIconLink href={links[link]}>
                     <Icon
@@ -79,7 +79,7 @@ export default class Footer extends Component {
                     />
                   </SocialIconLink>
                 </Box>
-              )}
+              ))}
             </Flex>
           </Box>
           <Box width={[1, 3 / 4]} mt={[4]} pr={[0, 1, 0]}>

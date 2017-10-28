@@ -5,7 +5,7 @@ import { Flex, Box } from "grid-styled";
 import { space } from "styled-system";
 import Container from "../components/container";
 
-const NotFoundPage = () =>
+const NotFoundPage = () => (
   <Container>
     <Flex justify="flex-start" wrap>
       <Box w={[1]} my={[4]}>
@@ -23,6 +23,7 @@ const NotFoundPage = () =>
         </ul>
       </Box>
     </Flex>
-  </Container>;
+  </Container>
+);
 
 export default NotFoundPage;
