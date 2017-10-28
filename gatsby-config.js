@@ -1,6 +1,7 @@
 const dotenv = require("dotenv").config()
 
 module.exports = {
+  polyfill: false,
   siteMetadata: {
     title: `Recent articles`,
     description: `Ryan Lindsey - ui engineer + manager, gadget lover & adrenaline junkie`,
