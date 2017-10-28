@@ -30,7 +30,7 @@
     "grid-styled": "2.0.0-11",
     "lodash": "^4.17.4",
     "polished": "1.8.1",
-    "prettier": "1.7.0",
+    "prettier": "1.7.4",
     "react-intl": "2.4.0",
     "slash": "^1.0.0",
     "styled-system": "1.0.8"
