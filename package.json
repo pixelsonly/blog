@@ -34,5 +34,5 @@
     "slash": "^1.0.0",
     "styled-system": "1.0.0-15"
   },
-  "browserlist": "> 5%"
+  "browserlist": "chrome >= 49, Edge >= 14, Firefox >= 45, Safari >= 10, iOS >= 10"
 }
