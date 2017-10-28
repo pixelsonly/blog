@@ -280,7 +280,7 @@ export const articleQuery = graphql`
         responsiveSizes(
           maxWidth: 900
           maxHeight: 450
-          quality: 80
+          quality: 85
           resizingBehavior: FILL
         ) {
           src

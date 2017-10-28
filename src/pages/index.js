@@ -262,7 +262,7 @@ export const pageQuery = graphql`
             }
           }
           profilePhoto {
-            resize(width: 600, quality: 100, jpegProgressive: true) {
+            resize(width: 600, quality: 85, jpegProgressive: true) {
               src
               width
               height
