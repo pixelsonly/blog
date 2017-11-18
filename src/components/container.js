@@ -10,7 +10,7 @@ const ContainerStyled = styled(Flex)`
 `;
 
 const Container = props => (
-  <ContainerStyled className={props.className}>
+  <ContainerStyled className={props.className} {...props}>
     {props.children}
   </ContainerStyled>
 );
