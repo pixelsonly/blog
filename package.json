@@ -1,6 +1,7 @@
 {
   "name": "@pixelsonly/blog",
-  "description": "Ryan Lindsey's blog, built with Gatsby/React + Contentful, continously deployed with Netlify",
+  "description":
+    "Ryan Lindsey's blog, built with Gatsby/React + Contentful, continously deployed with Netlify",
   "version": "3.0.0",
   "private": true,
   "author": "Ryan Lindsey <ryan@pixelsonly.com>",
@@ -37,5 +38,11 @@
     "slash": "^1.0.0",
     "styled-system": "1.0.8"
   },
-  "browserlist": "chrome >= 49, Edge >= 14, Firefox >= 45, Safari >= 10, iOS >= 10"
+  "browserlist": [
+    "chrome >= 49",
+    "Edge >= 14",
+    "Firefox >= 45",
+    "Safari >= 10",
+    "iOS >= 10"
+  ]
 }
