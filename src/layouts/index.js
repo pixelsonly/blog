@@ -164,8 +164,8 @@ export default class TemplateWrapper extends Component {
             </NavOpen>
           ) : (
             <NavClosed>
-              <Flex>
-                <Box w={[1]} px={[1]} py={[1]}>
+              <Flex justify="flex-end">
+                <Box px={[1]} py={[1]}>
                   <NavButton onClick={this.openMenu}>
                     <MenuOpen />
                   </NavButton>
