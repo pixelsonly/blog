@@ -30,7 +30,16 @@ module.exports = class HTML extends React.Component {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
-          <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+          <link
+            rel="shortcut icon"
+            type="image/png"
+            href="/favicon-16x16.png"
+          />
+          <link
+            rel="shortcut icon"
+            type="image/png"
+            href="/favicon-32x32.png"
+          />
           {css}
         </head>
         <body>
