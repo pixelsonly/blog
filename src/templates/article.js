@@ -35,11 +35,14 @@ const Author = styled(Flex)`
   text-align: center;
 `;
 
-const AuthorPhoto = styled.img`
+const AuthorPhoto = styled(Flex)`
   ${space} ${width} ${height};
-  width: ${rem("72px")};
-  height: ${rem("72px")};
-  border-radius: ${rem("10000px")};
+  display: flex;
+  justify-content: center;
+
+  img {
+    border-radius: ${rem("1000px")};
+  }
 `;
 
 const AuthorName = styled.figcaption`
@@ -165,7 +168,7 @@ export default class ArticleTemplate extends Component {
           flex={["1 1 auto"]}
           is="article"
           itemScope
-          itemType="http://schema.org/BlogPosting">
+        itemType="http://schema.org/BlogPosting">
           <ArticleHeader direction={["column"]} is="header">
             <ArticleDate
               f={[0, 1]}
@@ -221,16 +224,18 @@ export default class ArticleTemplate extends Component {
               itemScope
               itemType="http://schema.org/Person"
               itemProp="author"
-              rel="author">
-              <AuthorPhoto
-                src={profilePhoto.resize.src}
-                alt={profilePhoto.title}
-                itemProp="image"
-                width={profilePhoto.resize.width}
-                height={profilePhoto.resize.height}
-                my={[1]}
-                mx={["auto"]}
-              />
+            rel="author">
+              <AuthorPhoto is="picture" my={[1]} mx={["auto"]}>
+                <source
+                  media={profilePhoto.sizes.sizes}
+                  srcSet={profilePhoto.sizes.srcSet}
+                />
+                <img
+                  src={`${profilePhoto.sizes.src}&r=1000`}
+                  itemProp="image"
+                  alt={profilePhoto.title}
+                />
+              </AuthorPhoto>
               <AuthorName f={[2, 3]} itemProp="name">
                 {authorName}
               </AuthorName>
@@ -327,8 +332,14 @@ export const articleQuery = graphql`
         }
         profilePhoto {
           title
+          description
           file {
             url
+          }
+          sizes(maxWidth: 72, maxHeight: 72, quality: 85) {
+            src
+            srcSet
+            sizes
           }
           resize(width: 144, height: 144, quality: 85, jpegProgressive: true) {
             src

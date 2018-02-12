@@ -21,15 +21,12 @@ export const PageTitle = styled.h1`
   text-align: center;
 `;
 
-export const ProfilePhoto = styled.img`
-  display: block;
-  margin: 0 auto;
-  max-width: 45%;
-  height: auto;
-  border-radius: ${rem("10000px")};
-
-  ${breakpoint.medium`max-width: 30%;`};
-  ${breakpoint.large`max-width: 25%;`};
+export const ProfilePhoto = styled(Flex)`
+  display: flex;
+  justify-content: center;
+  img {
+    border-radius: ${rem("1000px")};
+  }
 `;
 
 export const AuthorName = styled.h1`
