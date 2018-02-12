@@ -81,7 +81,17 @@ export default class IndexPage extends Component {
             itemScope
             itemType="http://schema.org/Person"
             rel="author">
-            <ProfilePhoto src={profilePhoto.resize.src} itemProp="image" />
+            <ProfilePhoto is="picture">
+              <source
+                media={profilePhoto.sizes.sizes}
+                srcSet={profilePhoto.sizes.srcSet}
+              />
+              <img
+                src={`${profilePhoto.sizes.src}&r=1000`}
+                itemProp="image"
+                alt={profilePhoto.description}
+              />
+            </ProfilePhoto>
             <AuthorName itemProp="name" mb={[0]}>
               {authorName}
             </AuthorName>
@@ -260,6 +270,13 @@ export const pageQuery = graphql`
             }
           }
           profilePhoto {
+            title
+            description
+            sizes(maxWidth: 180, maxHeight: 180, quality: 85) {
+              src
+              srcSet
+              sizes
+            }
             resize(width: 600, quality: 85, jpegProgressive: true) {
               src
               width
