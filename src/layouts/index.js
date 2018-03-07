@@ -119,7 +119,7 @@ export default class TemplateWrapper extends Component {
         <OuterContainer>
           {isMenuOpen ? (
             <NavOpen>
-              <Flex justifyContent="flex-end" mt={[2]} mx={[2, 2, 4]}>
+              <Flex justifyContent={["flex-end"]} mt={[2]} mx={[2, 2, 4]}>
                 <Box px={[1]} py={[1]}>
                   <NavButton onClick={this.closeMenu}>
                     <MenuClose
@@ -130,7 +130,7 @@ export default class TemplateWrapper extends Component {
                   </NavButton>
                 </Box>
               </Flex>
-              <Flex justifyContent="center" wrap mx={[2, 2, 4]}>
+              <Flex justifyContent={["center"]} flexWrap={["wrap"]} mx={[2, 2, 4]}>
                 <Box w={[1]} py={[2]} mx={[2]}>
                   <HLineDark />
                 </Box>
@@ -164,7 +164,7 @@ export default class TemplateWrapper extends Component {
             </NavOpen>
           ) : (
             <NavClosed>
-              <Flex justifyContent="flex-end">
+              <Flex justifyContent={["flex-end"]}>
                 <Box px={[1]} py={[1]}>
                   <NavButton onClick={this.openMenu}>
                     <MenuOpen />
