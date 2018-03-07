@@ -80,7 +80,7 @@ export default class IndexPage extends Component {
             pb={[3]}
             itemScope
             itemType="http://schema.org/Person"
-            rel="author">
+          rel="author">
             <ProfilePhoto is="picture">
               <source
                 media={profilePhoto.sizes.sizes}
@@ -129,7 +129,7 @@ export default class IndexPage extends Component {
                     />
                     <Flex
                       justifyContent={["flex-start"]}
-                      column
+                      flexDirection={["column"]}
                       px={[2]}
                       pb={[3, 4]}>
                       <ArticlePreview
@@ -157,14 +157,14 @@ export default class IndexPage extends Component {
                           fontSize={[3, 4]}
                           my={[1]}
                           mb={[1]}
-                          itemProp="headline">
+                        itemProp="headline">
                           {title}
                         </ArticleTitle>
                         <ArticleBlurb
                           mt={[0]}
                           mb={[1]}
                           fontSize={[1]}
-                          itemProp="description">
+                        itemProp="description">
                           {blurb}
                         </ArticleBlurb>
                         <ReadMore>Read more</ReadMore>
@@ -215,7 +215,7 @@ export default class IndexPage extends Component {
                           itemProp="datePublished"
                           content={date}>
                           <FormattedDate
-                            value={date}
+                            value={rawDate}
                             year="numeric"
                             month="long"
                             day="2-digit"
@@ -226,14 +226,14 @@ export default class IndexPage extends Component {
                         <ArticleTitle
                           fontSize={[2, 3]}
                           mb={[1]}
-                          itemProp="headline">
+                        itemProp="headline">
                           {title}
                         </ArticleTitle>
                         <ArticleBlurb
                           mt={[0]}
                           mb={[1]}
                           fontSize={[0, 1]}
-                          itemProp="description">
+                        itemProp="description">
                           {blurb}
                         </ArticleBlurb>
                         <ReadMore>Read more</ReadMore>

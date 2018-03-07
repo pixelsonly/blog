@@ -168,7 +168,7 @@ export default class ArticleTemplate extends Component {
           flex={["1 1 auto"]}
           is="article"
           itemScope
-          itemType="http://schema.org/BlogPosting">
+        itemType="http://schema.org/BlogPosting">
           <ArticleHeader flexDirection={["column"]} is="header">
             <ArticleDate
               f={[0, 1]}

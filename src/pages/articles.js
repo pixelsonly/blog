@@ -92,7 +92,7 @@ class ArticlesPage extends Component {
                 <article
                   key={id}
                   itemScope
-                  itemType="http://schema.org/BlogPosting">
+                itemType="http://schema.org/BlogPosting">
                   <ArticleLink to={`/articles/${slug}`}>
                     <FeaturedImage
                       src={featuredImage.resize.src}
@@ -103,7 +103,7 @@ class ArticlesPage extends Component {
                     />
                     <Flex
                       justifyContent={["flex-start"]}
-                      column
+                      flexDirection={["column"]}
                       px={[2]}
                       pb={[3]}>
                       <ArticlePreview
@@ -118,7 +118,7 @@ class ArticlesPage extends Component {
                           itemProp="datePublished"
                           content={date}>
                           <FormattedDate
-                            value={date}
+                            value={rawDate}
                             year="numeric"
                             month="long"
                             day="2-digit"

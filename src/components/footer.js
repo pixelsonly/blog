@@ -59,15 +59,15 @@ export default class Footer extends Component {
       <Container>
         <Flex
           is="footer"
-          direction="row"
-          justify="flex-start"
-          align="flex-start"
-          wrap
+          flexDirection={["row"]}
+          justifyContent={["flex-start"]}
+          alignContent={["flex-start"]}
+          flexWrap={["wrap"]}
           w={[1]}
           pb={[4]}
-          flex="1 1 auto">
+        flex="1 1 auto">
           <Box width={[1, 1 / 4]} mt={[4]} pl={[0, 1, 0]}>
-            <Flex justify="center">
+            <Flex justifyContent={["center"]}>
               {Object.keys(links).map((link, i) => (
                 <Box flex={["1 1 auto"]} key={i}>
                   <SocialIconLink href={links[link]}>
