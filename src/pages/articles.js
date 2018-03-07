@@ -52,7 +52,7 @@ class ArticlesPage extends Component {
           />
           <link rel="canonical" href="https://www.pixelsonly.com/articles" />
         </Helmet>
-        <Flex column>
+        <Flex flexDirection={["column"]}>
           <Box width={[1]}>
             <PageTitle fontSize={[5]} px={[2, 2, 4]} mt={[3]} mb={[3]}>
               Thoughts on technology, work, and adventuring&hellip;
@@ -60,8 +60,8 @@ class ArticlesPage extends Component {
             <nav>
               <Breadcrumbs
                 is="ul"
-                direction="row"
-                justify="flex-start"
+                flexDirection={["row"]}
+                justifyContent={["flex-start"]}
                 m={[0]}
                 px={[2, 2, 0]}
                 pb={[2]}
@@ -100,7 +100,11 @@ class ArticlesPage extends Component {
                       height={featuredImage.resize.height}
                       itemProp="image"
                     />
-                    <Flex justify={["flex-start"]} column px={[2]} pb={[3]}>
+                    <Flex
+                      justifyContent={["flex-start"]}
+                      column
+                      px={[2]}
+                      pb={[3]}>
                       <ArticlePreview
                         width={[1]}
                         mt={[-3, -3, "-72px"]}

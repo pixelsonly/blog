@@ -168,8 +168,8 @@ export default class ArticleTemplate extends Component {
           flex={["1 1 auto"]}
           is="article"
           itemScope
-        itemType="http://schema.org/BlogPosting">
-          <ArticleHeader direction={["column"]} is="header">
+          itemType="http://schema.org/BlogPosting">
+          <ArticleHeader flexDirection={["column"]} is="header">
             <ArticleDate
               f={[0, 1]}
               m={[0]}
@@ -191,8 +191,8 @@ export default class ArticleTemplate extends Component {
             <nav>
               <Breadcrumbs
                 is="ul"
-                direction="row"
-                justify="flex-start"
+                flexDirection={["row"]}
+                justifyContent={["flex-start"]}
                 m={[0]}
                 px={[2, 2, 0]}
                 pb={[2]}
@@ -215,7 +215,7 @@ export default class ArticleTemplate extends Component {
             />
             <Author
               is="figure"
-              direction="column"
+              flexDirection={["column"]}
               mt={[-3, -3, "-72px"]}
               mx={[2]}
               mb={[0]}
@@ -224,7 +224,7 @@ export default class ArticleTemplate extends Component {
               itemScope
               itemType="http://schema.org/Person"
               itemProp="author"
-            rel="author">
+              rel="author">
               <AuthorPhoto is="picture" my={[1]} mx={["auto"]}>
                 <source
                   media={profilePhoto.sizes.sizes}

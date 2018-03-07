@@ -72,7 +72,7 @@ export default class IndexPage extends Component {
           />
           <link rel="canonical" href="https://www.pixelsonly.com" />
         </Helmet>
-        <Flex justify={["center"]} column>
+        <Flex justifyContent={["center"]} flexDirection={["column"]}>
           <Box
             width={[1]}
             px={[2, 2, 0]}
@@ -127,7 +127,11 @@ export default class IndexPage extends Component {
                       alt={featuredImage.title}
                       itemProp="image"
                     />
-                    <Flex justify={["flex-start"]} column px={[2]} pb={[3, 4]}>
+                    <Flex
+                      justifyContent={["flex-start"]}
+                      column
+                      px={[2]}
+                      pb={[3, 4]}>
                       <ArticlePreview
                         width={[1]}
                         mt={[-3, -3, "-72px"]}
