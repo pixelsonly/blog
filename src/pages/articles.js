@@ -83,6 +83,7 @@ class ArticlesPage extends Component {
                   featuredImage,
                   blurb: { blurb: blurb },
                   date,
+                  rawDate,
                   author: [{ name: authorName }],
                   category: { title: category },
                 },
@@ -209,6 +210,7 @@ export const pageQuery = graphql`
             }
           }
           date(formatString: "YYYY-MM-DD")
+          rawDate: date
           author {
             name
             website
