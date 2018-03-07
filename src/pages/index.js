@@ -144,7 +144,7 @@ export default class IndexPage extends Component {
                           itemProp="datePublished"
                           content={date}>
                           <FormattedDate
-                            value={date}
+                            value={rawDate}
                             year="numeric"
                             month="long"
                             day="2-digit"
