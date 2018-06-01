@@ -15,7 +15,8 @@ import ExternalAnchor from "../components/external-anchor";
 import Footer from "../components/footer";
 import { HLineDark } from "../styles/global";
 
-require("prismjs/themes/prism-okaidia.css");
+// require("prismjs/themes/prism-okaidia.css");
+require("prismjs/themes/prism-solarizedlight.css");
 require("typeface-open-sans");
 require("typeface-vollkorn");
 
@@ -130,7 +131,10 @@ export default class TemplateWrapper extends Component {
                   </NavButton>
                 </Box>
               </Flex>
-              <Flex justifyContent={["center"]} flexWrap={["wrap"]} mx={[2, 2, 4]}>
+              <Flex
+                justifyContent={["center"]}
+                flexWrap={["wrap"]}
+                mx={[2, 2, 4]}>
                 <Box w={[1]} py={[2]} mx={[2]}>
                   <HLineDark />
                 </Box>
