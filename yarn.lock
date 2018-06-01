@@ -23,6 +23,12 @@
     follow-redirects "^1.2.5"
     is-buffer "^1.1.5"
 
+"@raygesualdo/gatsby-plugin-babel-styled-components@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@raygesualdo/gatsby-plugin-babel-styled-components/-/gatsby-plugin-babel-styled-components-1.0.1.tgz#dc55fcc7954e6b6beea9a445ec05b8349e77f023"
+  dependencies:
+    babel-plugin-styled-components "^1.5.1"
+
 "@types/configstore@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@types/configstore/-/configstore-2.1.1.tgz#cd1e8553633ad3185c3f2f239ecff5d2643e92b6"
@@ -3369,7 +3375,7 @@ gatsby-plugin-react-next@^1.0.8:
     react "^16.0.0"
     react-dom "^16.0.0"
 
-gatsby-plugin-styled-components@^2.0.5:
+gatsby-plugin-styled-components@^2.0.11:
   version "2.0.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-2.0.11.tgz#c3d3438c7970bbcc116e821fb966687098bdaf57"
   dependencies:
@@ -3431,9 +3437,9 @@ gatsby-transformer-remark@^1.7.31:
     unist-util-select "^1.5.0"
     unist-util-visit "^1.1.1"
 
-gatsby@^1.9.266:
-  version "1.9.266"
-  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.266.tgz#73b6a1d50effef0d4036dc4a5c3c020059dd276f"
+gatsby@^1.9.267:
+  version "1.9.267"
+  resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-1.9.267.tgz#7d28724f355393827cdec18fb8245012badd0d8f"
   dependencies:
     async "^2.1.2"
     babel-code-frame "^6.22.0"
