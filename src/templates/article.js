@@ -104,8 +104,9 @@ const ArticleBody = styled(Box)`
     color: ${theme.colors.darkGray};
   }
 
-  .gatsby-highlight pre[class*="language-"] {
-    background-color: ${theme.colors.darkGray};
+  .gatsby-highlight pre[class*="language-"],
+  code[class*="language-"] {
+    background-color: ${theme.colors.lightGray};
     border-radius: 0;
     font-size: ${rem("14px")};
     text-shadow: none;
@@ -168,7 +169,7 @@ export default class ArticleTemplate extends Component {
           flex={["1 1 auto"]}
           is="article"
           itemScope
-        itemType="http://schema.org/BlogPosting">
+          itemType="http://schema.org/BlogPosting">
           <ArticleHeader flexDirection={["column"]} is="header">
             <ArticleDate
               f={[0, 1]}
