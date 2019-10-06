@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://pixelsonly-blog.netlify.com/articles/*"
+  to = "https://blog.pixelsonly.com/arcticles/:splat"
+  status =  301
+  force = true
